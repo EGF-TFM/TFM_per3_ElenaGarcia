@@ -1,0 +1,1479 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1200,
+  "model": {
+    "culture": "en-US",
+    "dataSources": [
+      {
+        "name": "Padron_Navarra_SqlServer  ",
+        "connectionString": "Provider=SQLNCLI11;Data Source=sqlserver;Initial Catalog=Padron_Navarra;Integrated Security=SSPI;Persist Security Info=false",
+        "impersonationMode": "impersonateAccount",
+        "account": "BOSONIT\\andres.moncada",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "PN_Areas",
+        "columns": [
+          {
+            "name": "Id",
+            "dataType": "string",
+            "sourceColumn": "Id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Areas",
+            "dataType": "string",
+            "sourceColumn": "Nombre",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "type": "calculated",
+            "name": "Áreas",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "if(LEFT([Areas],6)=\"Area d\",SUBSTITUTE([Areas],\"Area de \",\"\"),SUBSTITUTE([Areas],\"Area \",\"\"))"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "PN_Areas",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[PN_Areas].* FROM [dbo].[PN_Areas] ",
+              "dataSource": "Padron_Navarra_SqlServer  "
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[PN_Areas].* FROM [dbo].[PN_Areas] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "PN_Areas"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "PN_Continentes",
+        "columns": [
+          {
+            "name": "Id",
+            "dataType": "int64",
+            "sourceColumn": "Id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Nombre",
+            "dataType": "string",
+            "sourceColumn": "Nombre",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "PN_Continentes",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[PN_Continentes].* FROM [dbo].[PN_Continentes] ",
+              "dataSource": "Padron_Navarra_SqlServer  "
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[PN_Continentes].* FROM [dbo].[PN_Continentes] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "PN_Continentes"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "PN_Edad4G",
+        "columns": [
+          {
+            "name": "Id",
+            "dataType": "string",
+            "sourceColumn": "Id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Edad4G",
+            "dataType": "string",
+            "sourceColumn": "Nombre",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "type": "calculated",
+            "name": "Edad4g2",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "CONCATENATE([ID],CONCATENATE(\"- \",SUBSTITUTE([EDAD4G],RIGHT([EDAD4G],5),\"\")))"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "PN_Edad4G",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[PN_Edad4G].* FROM [dbo].[PN_Edad4G] ",
+              "dataSource": "Padron_Navarra_SqlServer  "
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[PN_Edad4G].* FROM [dbo].[PN_Edad4G] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "PN_Edad4G"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "PN_EdadG2",
+        "columns": [
+          {
+            "name": "Id",
+            "dataType": "int64",
+            "sourceColumn": "Id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "EdadG",
+            "dataType": "string",
+            "sourceColumn": "Nombre",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "NewColumn",
+            "dataType": "string",
+            "sourceColumn": "NewColumn",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "type": "calculated",
+            "name": "Id2",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "if(or(or(or(or(or(or(or(or([ID]=1 , [ID]=2) ,[ID]=3), [ID]=4), [ID]=5), [ID]=6),[ID]=7), [ID]=8),[ID]=9),CONCATENATE(\"0\",[ID]),CONCATENATE([ID],\"\"))"
+          },
+          {
+            "type": "calculated",
+            "name": "EdadG2",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "CONCATENATE([Id2],CONCATENATE(\"- \",SUBSTITUTE([EdadG],RIGHT([EdadG],5),\"\")))"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "PN_EdadG2",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[PN_EdadG2].* FROM [dbo].[PN_EdadG2] ",
+              "dataSource": "Padron_Navarra_SqlServer  "
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[PN_EdadG2].* FROM [dbo].[PN_EdadG2] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "PN_EdadG2"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "PN_EstrategiaTerritorial",
+        "columns": [
+          {
+            "name": "Id",
+            "dataType": "int64",
+            "sourceColumn": "Id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Nombre",
+            "dataType": "string",
+            "sourceColumn": "Nombre",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "PN_EstrategiaTerritorial",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[PN_EstrategiaTerritorial].* FROM [dbo].[PN_EstrategiaTerritorial] ",
+              "dataSource": "Padron_Navarra_SqlServer  "
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[PN_EstrategiaTerritorial].* FROM [dbo].[PN_EstrategiaTerritorial] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "PN_EstrategiaTerritorial"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "PN_FACT_Padron",
+        "columns": [
+          {
+            "name": "IdMunicipio",
+            "dataType": "int64",
+            "sourceColumn": "IdMunicipio",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "IdSexo",
+            "dataType": "int64",
+            "sourceColumn": "IdSexo",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Año",
+            "dataType": "int64",
+            "sourceColumn": "Año",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Edad",
+            "dataType": "int64",
+            "sourceColumn": "Edad",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "IdNivelEstudios",
+            "dataType": "int64",
+            "sourceColumn": "IdNivelEstudios",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "IdPais",
+            "dataType": "int64",
+            "sourceColumn": "IdPais",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Fecha",
+            "dataType": "dateTime",
+            "sourceColumn": "Fecha",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "type": "calculated",
+            "name": "EdadG",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "expression": "IF(AND([EDAD]>=0,[EDAD]<=4),1,if(AND([EDAD]>=5,[EDAD]<=9),2,if(AND([EDAD]>=10,[EDAD]<=14),3,if(AND([EDAD]>=15,[EDAD]<=19),4,if(AND([EDAD]>=20,[EDAD]<=24),5,if(AND([EDAD]>=25,[EDAD]<=29),6,if(AND([EDAD]>=30,[EDAD]<=34),7,if(AND([EDAD]>=35,[EDAD]<=39),8,if(AND([EDAD]>=40,[EDAD]<=44),9,if(AND([EDAD]>=45,[EDAD]<=49),10,if(AND([EDAD]>=50,[EDAD]<=54),11,if(AND([EDAD]>=55,[EDAD]<=59),12,if(AND([EDAD]>=60,[EDAD]<=64),13,if(AND([EDAD]>=65,[EDAD]<=69),14,if(AND([EDAD]>=70,[EDAD]<=74),15,if(AND([EDAD]>=75,[EDAD]<=79),16,if(AND([EDAD]>=80,[EDAD]<=84),17,if(AND([EDAD]>=85,[EDAD]<=89),18,if(AND([EDAD]>=90,[EDAD]<=94),19,if(AND([EDAD]>=95,[EDAD]<=99),20,if([EDAD]>=100,21)))))))))))))))))))))"
+          },
+          {
+            "type": "calculated",
+            "name": "Edad4G",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "expression": "IF([EDAD]<=15,1,if(AND([EDAD]>15,[EDAD]<=44),2,if(AND([EDAD]>=45,[EDAD]<=64),3,if([EDAD]>=65,4))))"
+          },
+          {
+            "name": "IdProvincia",
+            "dataType": "int64",
+            "sourceColumn": "IdProvincia"
+          },
+          {
+            "name": "IdNacionalidad",
+            "dataType": "int64",
+            "sourceColumn": "IdNacionalidad"
+          },
+          {
+            "name": "IdContinentes",
+            "dataType": "int64",
+            "sourceColumn": "IdContinentes"
+          },
+          {
+            "name": "IdContinentes2",
+            "dataType": "int64",
+            "sourceColumn": "IdContinentes2"
+          },
+          {
+            "name": "IdTamanoMunicipio",
+            "dataType": "int64",
+            "sourceColumn": "IdTamanoMunicipio"
+          },
+          {
+            "name": "IdCategoria",
+            "dataType": "int64",
+            "sourceColumn": "IdCategoria"
+          },
+          {
+            "name": "IdZonasLing",
+            "dataType": "int64",
+            "sourceColumn": "IdZonasLing"
+          },
+          {
+            "name": "IdZonas2000",
+            "dataType": "int64",
+            "sourceColumn": "IdZonas2000"
+          },
+          {
+            "name": "IdZonasBasicasSalud",
+            "dataType": "int64",
+            "sourceColumn": "IdZonasBasicasSalud"
+          },
+          {
+            "name": "IdCentrosAtencionMujer",
+            "dataType": "int64",
+            "sourceColumn": "IdCentrosAtencionMujer"
+          },
+          {
+            "name": "IdAreasSalud",
+            "dataType": "int64",
+            "sourceColumn": "IdAreasSalud"
+          },
+          {
+            "name": "IdServiciosSaludMental",
+            "dataType": "int64",
+            "sourceColumn": "IdServiciosSaludMental"
+          },
+          {
+            "name": "IdAreas",
+            "dataType": "int64",
+            "sourceColumn": "IdAreas"
+          },
+          {
+            "name": "IsZonasSS",
+            "dataType": "int64",
+            "sourceColumn": "IsZonasSS"
+          },
+          {
+            "name": "IDZonasPOT",
+            "dataType": "int64",
+            "sourceColumn": "IDZonasPOT"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "PN_FACT_Padron",
+            "dataView": "full",
+            "source": {
+              "query": "SELECT * FROM [dbo].[PN_FACT_Padron]",
+              "dataSource": "Padron_Navarra_SqlServer  "
+            },
+            "annotations": [
+              {
+                "name": "QueryEditorSerialization",
+                "value": "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT * FROM [dbo].[PN_FACT_Padron]</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+              }
+            ]
+          }
+        ],
+        "measures": [
+          {
+            "name": "Población",
+            "expression": "COUNTROWS()"
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": "SELECT * FROM [dbo].[PN_FACT_Padron]"
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "PN_FACT_Padron"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          },
+          {
+            "name": "QueryEditorSerialization",
+            "value": "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT * FROM [dbo].[PN_FACT_Padron]</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+          }
+        ]
+      },
+      {
+        "name": "PN_NivelEstudios",
+        "columns": [
+          {
+            "name": "Id",
+            "dataType": "int64",
+            "sourceColumn": "Id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Nombre",
+            "dataType": "string",
+            "sourceColumn": "Nombre",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "PN_NivelEstudios",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[PN_NivelEstudios].* FROM [dbo].[PN_NivelEstudios] ",
+              "dataSource": "Padron_Navarra_SqlServer  "
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[PN_NivelEstudios].* FROM [dbo].[PN_NivelEstudios] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "PN_NivelEstudios"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "PN_Pais_Continente",
+        "columns": [
+          {
+            "name": "IdPais",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "IdPais",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "IdContinente",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "IdContinente",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "type": "calculated",
+            "name": "Continente",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "RELATED(PN_Continentes[Nombre])"
+          },
+          {
+            "type": "calculated",
+            "name": "Pais",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "related(PN_Paises[Nombre])"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "PN_Pais_Continente",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[PN_Pais_Continente].* FROM [dbo].[PN_Pais_Continente] ",
+              "dataSource": "Padron_Navarra_SqlServer  "
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[PN_Pais_Continente].* FROM [dbo].[PN_Pais_Continente] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "PN_Pais_Continente"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "PN_Sexo",
+        "columns": [
+          {
+            "name": "Id",
+            "dataType": "int64",
+            "sourceColumn": "Id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Nombre",
+            "dataType": "string",
+            "sourceColumn": "Nombre",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "PN_Sexo",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[PN_Sexo].* FROM [dbo].[PN_Sexo] ",
+              "dataSource": "Padron_Navarra_SqlServer  "
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[PN_Sexo].* FROM [dbo].[PN_Sexo] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "PN_Sexo"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "PN_VariablesDerivadas",
+        "columns": [
+          {
+            "name": "CMUN",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "CMUN",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Z2000",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Z2000",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ASS",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "ASS",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ZSS",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "ZSS",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ZLING",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "ZLING",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ETN",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "ETN",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "type": "calculated",
+            "name": "Zona2000",
+            "dataType": "unknown",
+            "isDataTypeInferred": true,
+            "expression": "related(PN_Zonas2000[Nombre])"
+          },
+          {
+            "type": "calculated",
+            "name": "Areas",
+            "dataType": "unknown",
+            "isDataTypeInferred": true,
+            "expression": "related(PN_Areas[Áreas])"
+          },
+          {
+            "type": "calculated",
+            "name": "ZonaSS",
+            "dataType": "unknown",
+            "isDataTypeInferred": true,
+            "expression": "related(PN_ZonasSS[Zona_SS2])"
+          },
+          {
+            "type": "calculated",
+            "name": "ZonaLingüistica",
+            "dataType": "unknown",
+            "isDataTypeInferred": true,
+            "expression": "related(PN_ZonasLing[Nombre])"
+          },
+          {
+            "type": "calculated",
+            "name": "EstrategiaTerritorial",
+            "dataType": "unknown",
+            "isDataTypeInferred": true,
+            "expression": "related(PN_EstrategiaTerritorial[Nombre])"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "PN_VariablesDerivadas",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[PN_VariablesDerivadas].* FROM [dbo].[PN_VariablesDerivadas] ",
+              "dataSource": "Padron_Navarra_SqlServer  "
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[PN_VariablesDerivadas].* FROM [dbo].[PN_VariablesDerivadas] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "PN_VariablesDerivadas"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "PN_Zonas2000",
+        "columns": [
+          {
+            "name": "Id",
+            "dataType": "int64",
+            "sourceColumn": "Id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Nombre",
+            "dataType": "string",
+            "sourceColumn": "Nombre",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "PN_Zonas2000",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[PN_Zonas2000].* FROM [dbo].[PN_Zonas2000] ",
+              "dataSource": "Padron_Navarra_SqlServer  "
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[PN_Zonas2000].* FROM [dbo].[PN_Zonas2000] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "PN_Zonas2000"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "PN_ZonasLing",
+        "columns": [
+          {
+            "name": "Id",
+            "dataType": "int64",
+            "sourceColumn": "Id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Nombre",
+            "dataType": "string",
+            "sourceColumn": "Nombre",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "PN_ZonasLing",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[PN_ZonasLing].* FROM [dbo].[PN_ZonasLing] ",
+              "dataSource": "Padron_Navarra_SqlServer  "
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[PN_ZonasLing].* FROM [dbo].[PN_ZonasLing] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "PN_ZonasLing"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "PN_ZonasSS",
+        "columns": [
+          {
+            "name": "Id",
+            "dataType": "int64",
+            "sourceColumn": "Id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Zona_SS",
+            "dataType": "string",
+            "sourceColumn": "Nombre",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "type": "calculated",
+            "name": "Zona_SS2",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "TRIM(SUBSTITUTE([Zona_SS],LEFT([Zona_SS],3),\" \"))"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "PN_ZonasSS",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[PN_ZonasSS].* FROM [dbo].[PN_ZonasSS] ",
+              "dataSource": "Padron_Navarra_SqlServer  "
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[PN_ZonasSS].* FROM [dbo].[PN_ZonasSS] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "PN_ZonasSS"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "PN_Paises",
+        "columns": [
+          {
+            "name": "Id",
+            "dataType": "int64",
+            "sourceColumn": "Id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Nombre",
+            "dataType": "string",
+            "sourceColumn": "Nombre",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "PN_Paises",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[PN_Paises].* FROM [dbo].[PN_Paises] ",
+              "dataSource": "Padron_Navarra_SqlServer  "
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[PN_Paises].* FROM [dbo].[PN_Paises] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "PN_Paises"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "PN_AreasSalud",
+        "columns": [
+          {
+            "name": "Id",
+            "dataType": "int64",
+            "sourceColumn": "Id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Nombre",
+            "dataType": "string",
+            "sourceColumn": "Nombre",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "PN_AreasSalud",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[PN_AreasSalud].* FROM [dbo].[PN_AreasSalud] ",
+              "dataSource": "Padron_Navarra_SqlServer  "
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[PN_AreasSalud].* FROM [dbo].[PN_AreasSalud] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "PN_AreasSalud"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "PN_CentrosAtencionMujer",
+        "columns": [
+          {
+            "name": "Id",
+            "dataType": "int64",
+            "sourceColumn": "Id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Nombre",
+            "dataType": "string",
+            "sourceColumn": "Nombre",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "PN_CentrosAtencionMujer",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[PN_CentrosAtencionMujer].* FROM [dbo].[PN_CentrosAtencionMujer] ",
+              "dataSource": "Padron_Navarra_SqlServer  "
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[PN_CentrosAtencionMujer].* FROM [dbo].[PN_CentrosAtencionMujer] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "PN_CentrosAtencionMujer"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "PN_Provincias",
+        "columns": [
+          {
+            "name": "Id",
+            "dataType": "int64",
+            "sourceColumn": "Id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Nombre",
+            "dataType": "string",
+            "sourceColumn": "Nombre",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "PN_Provincias",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[PN_Provincias].* FROM [dbo].[PN_Provincias] ",
+              "dataSource": "Padron_Navarra_SqlServer  "
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[PN_Provincias].* FROM [dbo].[PN_Provincias] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "PN_Provincias"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "PN_ServiciosSaludMental",
+        "columns": [
+          {
+            "name": "Id",
+            "dataType": "int64",
+            "sourceColumn": "Id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Nombre",
+            "dataType": "string",
+            "sourceColumn": "Nombre",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "PN_ServiciosSaludMental",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[PN_ServiciosSaludMental].* FROM [dbo].[PN_ServiciosSaludMental] ",
+              "dataSource": "Padron_Navarra_SqlServer  "
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[PN_ServiciosSaludMental].* FROM [dbo].[PN_ServiciosSaludMental] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "PN_ServiciosSaludMental"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "PN_ZonasBasicasSalud",
+        "columns": [
+          {
+            "name": "Id",
+            "dataType": "int64",
+            "sourceColumn": "Id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Nombre",
+            "dataType": "string",
+            "sourceColumn": "Nombre",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "PN_ZonasBasicasSalud",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[PN_ZonasBasicasSalud].* FROM [dbo].[PN_ZonasBasicasSalud] ",
+              "dataSource": "Padron_Navarra_SqlServer  "
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[PN_ZonasBasicasSalud].* FROM [dbo].[PN_ZonasBasicasSalud] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "PN_ZonasBasicasSalud"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "PN_ZonasPOT",
+        "columns": [
+          {
+            "name": "Id",
+            "dataType": "int64",
+            "sourceColumn": "Id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Nombre",
+            "dataType": "string",
+            "sourceColumn": "Nombre",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "PN_ZonasPOT",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[PN_ZonasPOT].* FROM [dbo].[PN_ZonasPOT] ",
+              "dataSource": "Padron_Navarra_SqlServer  "
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[PN_ZonasPOT].* FROM [dbo].[PN_ZonasPOT] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "PN_ZonasPOT"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "PN_Municipios",
+        "columns": [
+          {
+            "name": "Id",
+            "dataType": "int64",
+            "sourceColumn": "Id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Nombre",
+            "dataType": "string",
+            "sourceColumn": "Nombre",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "IdProvincia",
+            "dataType": "string",
+            "sourceColumn": "IdProvincia",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "PN_Municipios",
+            "dataView": "full",
+            "source": {
+              "query": "SELECT [dbo].[PN_Municipios].* FROM [dbo].[PN_Municipios]",
+              "dataSource": "Padron_Navarra_SqlServer  "
+            },
+            "annotations": [
+              {
+                "name": "QueryEditorSerialization",
+                "value": "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT [dbo].[PN_Municipios].* FROM [dbo].[PN_Municipios]</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": "SELECT [dbo].[PN_Municipios].* FROM [dbo].[PN_Municipios]"
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "PN_Municipios"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          },
+          {
+            "name": "QueryEditorSerialization",
+            "value": "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT [dbo].[PN_Municipios].* FROM [dbo].[PN_Municipios]</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+          }
+        ]
+      },
+      {
+        "name": "PN_Categoria",
+        "columns": [
+          {
+            "name": "Id",
+            "dataType": "int64",
+            "sourceColumn": "Id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Nombre",
+            "dataType": "string",
+            "sourceColumn": "Nombre",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "PN_Categoria",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[PN_Categoria].* FROM [dbo].[PN_Categoria] ",
+              "dataSource": "Padron_Navarra_SqlServer  "
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[PN_Categoria].* FROM [dbo].[PN_Categoria] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "PN_Categoria"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "PN_Continentes2",
+        "columns": [
+          {
+            "name": "Id",
+            "dataType": "int64",
+            "sourceColumn": "Id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Nombre",
+            "dataType": "string",
+            "sourceColumn": "Nombre",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "PN_Continentes2",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[PN_Continentes2].* FROM [dbo].[PN_Continentes2] ",
+              "dataSource": "Padron_Navarra_SqlServer  "
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[PN_Continentes2].* FROM [dbo].[PN_Continentes2] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "PN_Continentes2"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "PN_Nacionalidad",
+        "columns": [
+          {
+            "name": "Id",
+            "dataType": "int64",
+            "sourceColumn": "Id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Nombre",
+            "dataType": "string",
+            "sourceColumn": "Nombre",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "PN_Nacionalidad",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[PN_Nacionalidad].* FROM [dbo].[PN_Nacionalidad] ",
+              "dataSource": "Padron_Navarra_SqlServer  "
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[PN_Nacionalidad].* FROM [dbo].[PN_Nacionalidad] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "PN_Nacionalidad"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "PN_TamanoMunicipio",
+        "columns": [
+          {
+            "name": "Id",
+            "dataType": "int64",
+            "sourceColumn": "Id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Nombre",
+            "dataType": "string",
+            "sourceColumn": "Nombre",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "PN_TamanoMunicipio",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[PN_TamanoMunicipio].* FROM [dbo].[PN_TamanoMunicipio] ",
+              "dataSource": "Padron_Navarra_SqlServer  "
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[PN_TamanoMunicipio].* FROM [dbo].[PN_TamanoMunicipio] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "PN_TamanoMunicipio"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "a3026264-3e4d-4536-83da-ec216a25bc43",
+        "fromTable": "PN_FACT_Padron",
+        "fromColumn": "IdPais",
+        "toTable": "PN_Pais_Continente",
+        "toColumn": "IdPais"
+      },
+      {
+        "name": "867a3dd2-683e-413d-b03b-3ee55ef485e7",
+        "fromTable": "PN_Pais_Continente",
+        "fromColumn": "IdContinente",
+        "toTable": "PN_Continentes",
+        "toColumn": "Id"
+      },
+      {
+        "name": "0a369ef8-f331-4aff-a599-e7baa3156063",
+        "fromTable": "PN_FACT_Padron",
+        "fromColumn": "IdSexo",
+        "toTable": "PN_Sexo",
+        "toColumn": "Id"
+      },
+      {
+        "name": "7c7338f0-d308-4236-9afc-cdca0b4d7a49",
+        "fromTable": "PN_FACT_Padron",
+        "fromColumn": "IdNivelEstudios",
+        "toTable": "PN_NivelEstudios",
+        "toColumn": "Id"
+      },
+      {
+        "name": "a0ef6d7c-96e4-42dd-953f-fb2d26f8b3fb",
+        "fromTable": "PN_FACT_Padron",
+        "fromColumn": "EdadG",
+        "toTable": "PN_EdadG2",
+        "toColumn": "Id"
+      },
+      {
+        "name": "b31ee152-cd36-406a-92b0-144ee98af7b6",
+        "fromTable": "PN_FACT_Padron",
+        "fromColumn": "Edad4G",
+        "toTable": "PN_Edad4G",
+        "toColumn": "Id"
+      },
+      {
+        "name": "8cd838ce-ec08-4898-a41d-cb4bdc5d345c",
+        "fromTable": "PN_Pais_Continente",
+        "fromColumn": "IdPais",
+        "toTable": "PN_Paises",
+        "toColumn": "Id",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "43890a5a-8a18-4343-b7e2-c3df02e31206",
+        "fromTable": "PN_Municipios",
+        "fromColumn": "IdProvincia",
+        "toTable": "PN_Provincias",
+        "toColumn": "Id"
+      },
+      {
+        "name": "eca4b10e-79be-49e3-9225-89716e19aef3",
+        "fromTable": "PN_FACT_Padron",
+        "fromColumn": "IdMunicipio",
+        "toTable": "PN_Municipios",
+        "toColumn": "Id"
+      },
+      {
+        "name": "96ffb6d7-e176-43f4-8fdc-41f705164b8a",
+        "fromTable": "PN_FACT_Padron",
+        "fromColumn": "IdAreas",
+        "toTable": "PN_Areas",
+        "toColumn": "Id"
+      },
+      {
+        "name": "8e4032b2-9116-4ea6-84b7-a3a8870497c3",
+        "fromTable": "PN_FACT_Padron",
+        "fromColumn": "IdZonas2000",
+        "toTable": "PN_Zonas2000",
+        "toColumn": "Id"
+      },
+      {
+        "name": "e8ce2d21-6b23-4726-a356-91d0bde99d0e",
+        "fromTable": "PN_FACT_Padron",
+        "fromColumn": "IdZonasLing",
+        "toTable": "PN_ZonasLing",
+        "toColumn": "Id"
+      },
+      {
+        "name": "be70d287-39db-4cb6-89f6-764369c26483",
+        "fromTable": "PN_FACT_Padron",
+        "fromColumn": "IsZonasSS",
+        "toTable": "PN_ZonasSS",
+        "toColumn": "Id"
+      },
+      {
+        "name": "2a246ad9-9258-45af-a41b-606e36a64c58",
+        "fromTable": "PN_FACT_Padron",
+        "fromColumn": "IDZonasPOT",
+        "toTable": "PN_ZonasPOT",
+        "toColumn": "Id"
+      },
+      {
+        "name": "2f86c426-9e43-451a-ae93-89124613820a",
+        "fromTable": "PN_FACT_Padron",
+        "fromColumn": "IdServiciosSaludMental",
+        "toTable": "PN_ServiciosSaludMental",
+        "toColumn": "Id"
+      },
+      {
+        "name": "7b491d9f-79e1-40b4-96a0-371b2f269732",
+        "fromTable": "PN_FACT_Padron",
+        "fromColumn": "IdAreasSalud",
+        "toTable": "PN_AreasSalud",
+        "toColumn": "Id"
+      },
+      {
+        "name": "210a08ef-d873-4269-a34b-3080c7b3ed2b",
+        "fromTable": "PN_FACT_Padron",
+        "fromColumn": "IdCentrosAtencionMujer",
+        "toTable": "PN_CentrosAtencionMujer",
+        "toColumn": "Id"
+      },
+      {
+        "name": "4d1f2fdc-0130-4488-a20a-fe7e0233c68e",
+        "fromTable": "PN_FACT_Padron",
+        "fromColumn": "IdZonasBasicasSalud",
+        "toTable": "PN_ZonasBasicasSalud",
+        "toColumn": "Id"
+      },
+      {
+        "name": "84ac5691-8330-41ce-afd5-c361913cad7d",
+        "fromTable": "PN_FACT_Padron",
+        "fromColumn": "IdCategoria",
+        "toTable": "PN_Categoria",
+        "toColumn": "Id"
+      },
+      {
+        "name": "327933cd-6114-4e6f-bad7-36ea5f7f3f77",
+        "fromTable": "PN_FACT_Padron",
+        "fromColumn": "IdTamanoMunicipio",
+        "toTable": "PN_TamanoMunicipio",
+        "toColumn": "Id"
+      },
+      {
+        "name": "53a3607d-0396-4dbd-ae55-f96380778371",
+        "fromTable": "PN_FACT_Padron",
+        "fromColumn": "IdContinentes2",
+        "toTable": "PN_Continentes2",
+        "toColumn": "Id"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "400"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}
