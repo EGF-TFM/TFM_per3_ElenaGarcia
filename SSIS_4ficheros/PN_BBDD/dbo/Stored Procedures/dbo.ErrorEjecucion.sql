@@ -14,9 +14,9 @@ DECLARE @ErrorMensaje AS NVARCHAR(500)
 
 	-- Insertamos el log.
 	INSERT INTO LOG_Ejecuciones
-	(EjecucionId, EjecucionFecha, EjecucionPaqueteNombre, EjecucionEstado, EjecucionMensaje)
+	(EjecucionId, EjecucionFecha, EjecucionPaqueteNombre, EjecucionEstado, EjecucionMensaje,RowsInLog)
 	VALUES
-	(@EjecucionId, GETDATE(), @PaqueteNombre, @EstadoDesc, @ErrorMensaje)
+	(@EjecucionId, GETDATE(), @PaqueteNombre, @EstadoDesc, @ErrorMensaje,0)
 
   END TRY
   BEGIN CATCH

@@ -6,7 +6,7 @@
     "dataSources": [
       {
         "name": "Padron_Navarra_SqlServer  ",
-        "connectionString": "Provider=SQLNCLI11;Data Source=sqlserver;Initial Catalog=Padron_Navarra;Integrated Security=SSPI;Persist Security Info=false",
+        "connectionString": "Provider=SQLNCLI11;Data Source=sqlserver;Persist Security Info=false;Integrated Security=SSPI;Initial Catalog=Padron_Navarra",
         "impersonationMode": "impersonateAccount",
         "account": "BOSONIT\\andres.moncada",
         "annotations": [
@@ -24,12 +24,14 @@
           {
             "name": "Id",
             "dataType": "string",
+            "isHidden": true,
             "sourceColumn": "Id",
             "sourceProviderType": "Integer"
           },
           {
             "name": "Areas",
             "dataType": "string",
+            "isHidden": true,
             "sourceColumn": "Nombre",
             "sourceProviderType": "WChar"
           },
@@ -72,11 +74,12 @@
           {
             "name": "Id",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Id",
             "sourceProviderType": "Integer"
           },
           {
-            "name": "Nombre",
+            "name": "Continente",
             "dataType": "string",
             "sourceColumn": "Nombre",
             "sourceProviderType": "WChar"
@@ -113,6 +116,7 @@
           {
             "name": "Id",
             "dataType": "string",
+            "isHidden": true,
             "sourceColumn": "Id",
             "sourceProviderType": "Integer"
           },
@@ -156,72 +160,12 @@
         ]
       },
       {
-        "name": "PN_EdadG2",
-        "columns": [
-          {
-            "name": "Id",
-            "dataType": "int64",
-            "sourceColumn": "Id",
-            "sourceProviderType": "Integer"
-          },
-          {
-            "name": "EdadG",
-            "dataType": "string",
-            "sourceColumn": "Nombre",
-            "sourceProviderType": "WChar"
-          },
-          {
-            "name": "NewColumn",
-            "dataType": "string",
-            "sourceColumn": "NewColumn",
-            "sourceProviderType": "WChar"
-          },
-          {
-            "type": "calculated",
-            "name": "Id2",
-            "dataType": "string",
-            "isDataTypeInferred": true,
-            "expression": "if(or(or(or(or(or(or(or(or([ID]=1 , [ID]=2) ,[ID]=3), [ID]=4), [ID]=5), [ID]=6),[ID]=7), [ID]=8),[ID]=9),CONCATENATE(\"0\",[ID]),CONCATENATE([ID],\"\"))"
-          },
-          {
-            "type": "calculated",
-            "name": "EdadG2",
-            "dataType": "string",
-            "isDataTypeInferred": true,
-            "expression": "CONCATENATE([Id2],CONCATENATE(\"- \",SUBSTITUTE([EdadG],RIGHT([EdadG],5),\"\")))"
-          }
-        ],
-        "partitions": [
-          {
-            "name": "PN_EdadG2",
-            "dataView": "full",
-            "source": {
-              "query": " SELECT [dbo].[PN_EdadG2].* FROM [dbo].[PN_EdadG2] ",
-              "dataSource": "Padron_Navarra_SqlServer  "
-            }
-          }
-        ],
-        "annotations": [
-          {
-            "name": "_TM_ExtProp_QueryDefinition",
-            "value": " SELECT [dbo].[PN_EdadG2].* FROM [dbo].[PN_EdadG2] "
-          },
-          {
-            "name": "_TM_ExtProp_DbTableName",
-            "value": "PN_EdadG2"
-          },
-          {
-            "name": "_TM_ExtProp_DbSchemaName",
-            "value": "dbo"
-          }
-        ]
-      },
-      {
         "name": "PN_EstrategiaTerritorial",
         "columns": [
           {
             "name": "Id",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Id",
             "sourceProviderType": "Integer"
           },
@@ -263,12 +207,14 @@
           {
             "name": "IdMunicipio",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "IdMunicipio",
             "sourceProviderType": "Integer"
           },
           {
             "name": "IdSexo",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "IdSexo",
             "sourceProviderType": "Integer"
           },
@@ -287,6 +233,7 @@
           {
             "name": "IdNivelEstudios",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "IdNivelEstudios",
             "sourceProviderType": "Integer"
           },
@@ -298,9 +245,8 @@
           },
           {
             "name": "Fecha",
-            "dataType": "dateTime",
+            "dataType": "string",
             "sourceColumn": "Fecha",
-            "formatString": "General Date",
             "sourceProviderType": "DBTimeStamp"
           },
           {
@@ -320,11 +266,13 @@
           {
             "name": "IdProvincia",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "IdProvincia"
           },
           {
             "name": "IdNacionalidad",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "IdNacionalidad"
           },
           {
@@ -335,6 +283,7 @@
           {
             "name": "IdContinentes2",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "IdContinentes2"
           },
           {
@@ -345,52 +294,180 @@
           {
             "name": "IdCategoria",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "IdCategoria"
           },
           {
             "name": "IdZonasLing",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "IdZonasLing"
           },
           {
             "name": "IdZonas2000",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "IdZonas2000"
           },
           {
             "name": "IdZonasBasicasSalud",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "IdZonasBasicasSalud"
           },
           {
             "name": "IdCentrosAtencionMujer",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "IdCentrosAtencionMujer"
           },
           {
             "name": "IdAreasSalud",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "IdAreasSalud"
           },
           {
             "name": "IdServiciosSaludMental",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "IdServiciosSaludMental"
           },
           {
             "name": "IdAreas",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "IdAreas"
           },
           {
             "name": "IsZonasSS",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "IsZonasSS"
           },
           {
             "name": "IDZonasPOT",
             "dataType": "int64",
             "sourceColumn": "IDZonasPOT"
+          },
+          {
+            "type": "calculated",
+            "name": "IdAux",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "CONCATENATE(PN_FACT_Padron[IdMunicipio],PN_FACT_Padron[IdProvincia])"
+          },
+          {
+            "type": "calculated",
+            "name": "Provincia",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "RELATED(PN_Provincias[Provincia])"
+          },
+          {
+            "type": "calculated",
+            "name": "Nacionalidad",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "RELATED(PN_Nacionalidad[Nacionalidad])"
+          },
+          {
+            "type": "calculated",
+            "name": "Continente",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "RELATED(PN_Pais_Continente[Continente])"
+          },
+          {
+            "type": "calculated",
+            "name": "Continente2",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "RELATED(PN_Continentes2[Continente])"
+          },
+          {
+            "type": "calculated",
+            "name": "Categoría",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "RELATED(PN_Categoria[Categoría])"
+          },
+          {
+            "type": "calculated",
+            "name": "Zona lingüística",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "RELATED(PN_ZonasLing[Zonas lingüísticas])"
+          },
+          {
+            "type": "calculated",
+            "name": "Zonas 2000",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "RELATED(PN_Zonas2000[Zonas 2000])"
+          },
+          {
+            "type": "calculated",
+            "name": "Zonas básicas salud",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "RELATED(PN_ZonasBasicasSalud[Zonas de Salud])"
+          },
+          {
+            "type": "calculated",
+            "name": "Centros de atención a la mujer",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "RELATED(PN_CentrosAtencionMujer[NoCentros de Atención Mujer])"
+          },
+          {
+            "type": "calculated",
+            "name": "Áreas de Salud",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "RELATED(PN_AreasSalud[Áreas de Salud])"
+          },
+          {
+            "type": "calculated",
+            "name": "Servicios de Salud Mental",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "RELATED(PN_ServiciosSaludMental[Servicios de salud mental])"
+          },
+          {
+            "type": "calculated",
+            "name": "Áreas",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "RELATED(PN_Areas[Áreas])"
+          },
+          {
+            "type": "calculated",
+            "name": "Zonas SS",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "RELATED(PN_ZonasSS[Zona_SS])"
+          },
+          {
+            "type": "calculated",
+            "name": "Municipio",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "RELATED(PN_Municipios[Nombre])"
+          },
+          {
+            "type": "calculated",
+            "name": "Sexo",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "RELATED(PN_Sexo[Sexo])"
+          },
+          {
+            "type": "calculated",
+            "name": "Nivel de estudios",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "RELATED(PN_NivelEstudios[Nombre])"
           }
         ],
         "partitions": [
@@ -398,13 +475,61 @@
             "name": "PN_FACT_Padron",
             "dataView": "full",
             "source": {
-              "query": "SELECT * FROM [dbo].[PN_FACT_Padron]",
+              "query": [
+                "SELECT [Año]",
+                "      ,[IdMunicipio]",
+                "      ,[IdSexo]",
+                "      ,[Edad]",
+                "      ,[IdProvincia]",
+                "      ,[IdNacionalidad]",
+                "      ,[IdPais]",
+                "      ,[IdContinentes]",
+                "      ,[IdContinentes2]",
+                "      ,[IdNivelEstudios]",
+                "      ,[IdTamanoMunicipio]",
+                "      ,[IdCategoria]",
+                "      ,[IdZonasLing]",
+                "      ,[IdZonas2000]",
+                "      ,[IdZonasBasicasSalud]",
+                "      ,[IdCentrosAtencionMujer]",
+                "      ,[IdAreasSalud]",
+                "      ,[IdServiciosSaludMental]",
+                "      ,[IdAreas]",
+                "      ,[IsZonasSS]",
+                "      ,[IDZonasPOT]",
+                "      ,convert(date,[Fecha],103) as 'Fecha'",
+                "  FROM [Padron_Navarra].[dbo].[PN_FACT_Padron]"
+              ],
               "dataSource": "Padron_Navarra_SqlServer  "
             },
             "annotations": [
               {
                 "name": "QueryEditorSerialization",
-                "value": "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT * FROM [dbo].[PN_FACT_Padron]</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+                "value": [
+                  "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT [Año]",
+                  "      ,[IdMunicipio]",
+                  "      ,[IdSexo]",
+                  "      ,[Edad]",
+                  "      ,[IdProvincia]",
+                  "      ,[IdNacionalidad]",
+                  "      ,[IdPais]",
+                  "      ,[IdContinentes]",
+                  "      ,[IdContinentes2]",
+                  "      ,[IdNivelEstudios]",
+                  "      ,[IdTamanoMunicipio]",
+                  "      ,[IdCategoria]",
+                  "      ,[IdZonasLing]",
+                  "      ,[IdZonas2000]",
+                  "      ,[IdZonasBasicasSalud]",
+                  "      ,[IdCentrosAtencionMujer]",
+                  "      ,[IdAreasSalud]",
+                  "      ,[IdServiciosSaludMental]",
+                  "      ,[IdAreas]",
+                  "      ,[IsZonasSS]",
+                  "      ,[IDZonasPOT]",
+                  "      ,convert(date,[Fecha],103) as 'Fecha'",
+                  "  FROM [Padron_Navarra].[dbo].[PN_FACT_Padron]</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+                ]
               }
             ]
           }
@@ -418,7 +543,31 @@
         "annotations": [
           {
             "name": "_TM_ExtProp_QueryDefinition",
-            "value": "SELECT * FROM [dbo].[PN_FACT_Padron]"
+            "value": [
+              "SELECT [Año]",
+              "      ,[IdMunicipio]",
+              "      ,[IdSexo]",
+              "      ,[Edad]",
+              "      ,[IdProvincia]",
+              "      ,[IdNacionalidad]",
+              "      ,[IdPais]",
+              "      ,[IdContinentes]",
+              "      ,[IdContinentes2]",
+              "      ,[IdNivelEstudios]",
+              "      ,[IdTamanoMunicipio]",
+              "      ,[IdCategoria]",
+              "      ,[IdZonasLing]",
+              "      ,[IdZonas2000]",
+              "      ,[IdZonasBasicasSalud]",
+              "      ,[IdCentrosAtencionMujer]",
+              "      ,[IdAreasSalud]",
+              "      ,[IdServiciosSaludMental]",
+              "      ,[IdAreas]",
+              "      ,[IsZonasSS]",
+              "      ,[IDZonasPOT]",
+              "      ,convert(date,[Fecha],103) as 'Fecha'",
+              "  FROM [Padron_Navarra].[dbo].[PN_FACT_Padron]"
+            ]
           },
           {
             "name": "_TM_ExtProp_DbTableName",
@@ -430,7 +579,31 @@
           },
           {
             "name": "QueryEditorSerialization",
-            "value": "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT * FROM [dbo].[PN_FACT_Padron]</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+            "value": [
+              "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"QueryEditorSerialization\"><AnnotationContent><![CDATA[<RSQueryCommandText>SELECT [Año]",
+              "      ,[IdMunicipio]",
+              "      ,[IdSexo]",
+              "      ,[Edad]",
+              "      ,[IdProvincia]",
+              "      ,[IdNacionalidad]",
+              "      ,[IdPais]",
+              "      ,[IdContinentes]",
+              "      ,[IdContinentes2]",
+              "      ,[IdNivelEstudios]",
+              "      ,[IdTamanoMunicipio]",
+              "      ,[IdCategoria]",
+              "      ,[IdZonasLing]",
+              "      ,[IdZonas2000]",
+              "      ,[IdZonasBasicasSalud]",
+              "      ,[IdCentrosAtencionMujer]",
+              "      ,[IdAreasSalud]",
+              "      ,[IdServiciosSaludMental]",
+              "      ,[IdAreas]",
+              "      ,[IsZonasSS]",
+              "      ,[IDZonasPOT]",
+              "      ,convert(date,[Fecha],103) as 'Fecha'",
+              "  FROM [Padron_Navarra].[dbo].[PN_FACT_Padron]</RSQueryCommandText><RSQueryCommandType>Text</RSQueryCommandType><RSQueryDesignState></RSQueryDesignState>]]></AnnotationContent></Gemini>"
+            ]
           }
         ]
       },
@@ -440,6 +613,7 @@
           {
             "name": "Id",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Id",
             "sourceProviderType": "Integer"
           },
@@ -497,14 +671,14 @@
             "name": "Continente",
             "dataType": "string",
             "isDataTypeInferred": true,
-            "expression": "RELATED(PN_Continentes[Nombre])"
+            "expression": "RELATED(PN_Continentes[Continente])"
           },
           {
             "type": "calculated",
             "name": "Pais",
             "dataType": "string",
             "isDataTypeInferred": true,
-            "expression": "related(PN_Paises[Nombre])"
+            "expression": "related(PN_Paises[Pais])"
           }
         ],
         "partitions": [
@@ -538,11 +712,12 @@
           {
             "name": "Id",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Id",
             "sourceProviderType": "Integer"
           },
           {
-            "name": "Nombre",
+            "name": "Sexo",
             "dataType": "string",
             "sourceColumn": "Nombre",
             "sourceProviderType": "WChar"
@@ -574,122 +749,17 @@
         ]
       },
       {
-        "name": "PN_VariablesDerivadas",
-        "columns": [
-          {
-            "name": "CMUN",
-            "dataType": "int64",
-            "isHidden": true,
-            "sourceColumn": "CMUN",
-            "sourceProviderType": "Integer"
-          },
-          {
-            "name": "Z2000",
-            "dataType": "int64",
-            "isHidden": true,
-            "sourceColumn": "Z2000",
-            "sourceProviderType": "Integer"
-          },
-          {
-            "name": "ASS",
-            "dataType": "int64",
-            "isHidden": true,
-            "sourceColumn": "ASS",
-            "sourceProviderType": "Integer"
-          },
-          {
-            "name": "ZSS",
-            "dataType": "int64",
-            "isHidden": true,
-            "sourceColumn": "ZSS",
-            "sourceProviderType": "Integer"
-          },
-          {
-            "name": "ZLING",
-            "dataType": "int64",
-            "isHidden": true,
-            "sourceColumn": "ZLING",
-            "sourceProviderType": "Integer"
-          },
-          {
-            "name": "ETN",
-            "dataType": "int64",
-            "isHidden": true,
-            "sourceColumn": "ETN",
-            "sourceProviderType": "Integer"
-          },
-          {
-            "type": "calculated",
-            "name": "Zona2000",
-            "dataType": "unknown",
-            "isDataTypeInferred": true,
-            "expression": "related(PN_Zonas2000[Nombre])"
-          },
-          {
-            "type": "calculated",
-            "name": "Areas",
-            "dataType": "unknown",
-            "isDataTypeInferred": true,
-            "expression": "related(PN_Areas[Áreas])"
-          },
-          {
-            "type": "calculated",
-            "name": "ZonaSS",
-            "dataType": "unknown",
-            "isDataTypeInferred": true,
-            "expression": "related(PN_ZonasSS[Zona_SS2])"
-          },
-          {
-            "type": "calculated",
-            "name": "ZonaLingüistica",
-            "dataType": "unknown",
-            "isDataTypeInferred": true,
-            "expression": "related(PN_ZonasLing[Nombre])"
-          },
-          {
-            "type": "calculated",
-            "name": "EstrategiaTerritorial",
-            "dataType": "unknown",
-            "isDataTypeInferred": true,
-            "expression": "related(PN_EstrategiaTerritorial[Nombre])"
-          }
-        ],
-        "partitions": [
-          {
-            "name": "PN_VariablesDerivadas",
-            "dataView": "full",
-            "source": {
-              "query": " SELECT [dbo].[PN_VariablesDerivadas].* FROM [dbo].[PN_VariablesDerivadas] ",
-              "dataSource": "Padron_Navarra_SqlServer  "
-            }
-          }
-        ],
-        "annotations": [
-          {
-            "name": "_TM_ExtProp_QueryDefinition",
-            "value": " SELECT [dbo].[PN_VariablesDerivadas].* FROM [dbo].[PN_VariablesDerivadas] "
-          },
-          {
-            "name": "_TM_ExtProp_DbTableName",
-            "value": "PN_VariablesDerivadas"
-          },
-          {
-            "name": "_TM_ExtProp_DbSchemaName",
-            "value": "dbo"
-          }
-        ]
-      },
-      {
         "name": "PN_Zonas2000",
         "columns": [
           {
             "name": "Id",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Id",
             "sourceProviderType": "Integer"
           },
           {
-            "name": "Nombre",
+            "name": "Zonas 2000",
             "dataType": "string",
             "sourceColumn": "Nombre",
             "sourceProviderType": "WChar"
@@ -726,11 +796,12 @@
           {
             "name": "Id",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Id",
             "sourceProviderType": "Integer"
           },
           {
-            "name": "Nombre",
+            "name": "Zonas lingüísticas",
             "dataType": "string",
             "sourceColumn": "Nombre",
             "sourceProviderType": "WChar"
@@ -767,6 +838,7 @@
           {
             "name": "Id",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Id",
             "sourceProviderType": "Integer"
           },
@@ -775,13 +847,6 @@
             "dataType": "string",
             "sourceColumn": "Nombre",
             "sourceProviderType": "WChar"
-          },
-          {
-            "type": "calculated",
-            "name": "Zona_SS2",
-            "dataType": "string",
-            "isDataTypeInferred": true,
-            "expression": "TRIM(SUBSTITUTE([Zona_SS],LEFT([Zona_SS],3),\" \"))"
           }
         ],
         "partitions": [
@@ -815,14 +880,23 @@
           {
             "name": "Id",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Id",
             "sourceProviderType": "Integer"
           },
           {
-            "name": "Nombre",
+            "name": "PaisMayus",
             "dataType": "string",
+            "isHidden": true,
             "sourceColumn": "Nombre",
             "sourceProviderType": "WChar"
+          },
+          {
+            "type": "calculated",
+            "name": "Pais",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "CONCATENATE(UPPER(LEFT(PN_Paises[PaisMayus],1)),LOWER(RIGHT(PN_Paises[PaisMayus],LEN(PN_Paises[PaisMayus])-1)))"
           }
         ],
         "partitions": [
@@ -856,11 +930,12 @@
           {
             "name": "Id",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Id",
             "sourceProviderType": "Integer"
           },
           {
-            "name": "Nombre",
+            "name": "Áreas de Salud",
             "dataType": "string",
             "sourceColumn": "Nombre",
             "sourceProviderType": "WChar"
@@ -897,11 +972,12 @@
           {
             "name": "Id",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Id",
             "sourceProviderType": "Integer"
           },
           {
-            "name": "Nombre",
+            "name": "NoCentros de Atención Mujer",
             "dataType": "string",
             "sourceColumn": "Nombre",
             "sourceProviderType": "WChar"
@@ -938,11 +1014,12 @@
           {
             "name": "Id",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Id",
             "sourceProviderType": "Integer"
           },
           {
-            "name": "Nombre",
+            "name": "Provincia",
             "dataType": "string",
             "sourceColumn": "Nombre",
             "sourceProviderType": "WChar"
@@ -979,11 +1056,12 @@
           {
             "name": "Id",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Id",
             "sourceProviderType": "Integer"
           },
           {
-            "name": "Nombre",
+            "name": "Servicios de salud mental",
             "dataType": "string",
             "sourceColumn": "Nombre",
             "sourceProviderType": "WChar"
@@ -1020,11 +1098,12 @@
           {
             "name": "Id",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Id",
             "sourceProviderType": "Integer"
           },
           {
-            "name": "Nombre",
+            "name": "Zonas de Salud",
             "dataType": "string",
             "sourceColumn": "Nombre",
             "sourceProviderType": "WChar"
@@ -1061,11 +1140,12 @@
           {
             "name": "Id",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Id",
             "sourceProviderType": "Integer"
           },
           {
-            "name": "Nombre",
+            "name": "Zonas POT",
             "dataType": "string",
             "sourceColumn": "Nombre",
             "sourceProviderType": "WChar"
@@ -1102,6 +1182,7 @@
           {
             "name": "Id",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Id",
             "sourceProviderType": "Integer"
           },
@@ -1114,8 +1195,17 @@
           {
             "name": "IdProvincia",
             "dataType": "string",
+            "isHidden": true,
             "sourceColumn": "IdProvincia",
             "sourceProviderType": "WChar"
+          },
+          {
+            "type": "calculated",
+            "name": "IdAux",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": "concatenate(PN_Municipios[Id],PN_Municipios[IdProvincia])"
           }
         ],
         "partitions": [
@@ -1159,11 +1249,12 @@
           {
             "name": "Id",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Id",
             "sourceProviderType": "Integer"
           },
           {
-            "name": "Nombre",
+            "name": "Categoría",
             "dataType": "string",
             "sourceColumn": "Nombre",
             "sourceProviderType": "WChar"
@@ -1200,11 +1291,12 @@
           {
             "name": "Id",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Id",
             "sourceProviderType": "Integer"
           },
           {
-            "name": "Nombre",
+            "name": "Continente",
             "dataType": "string",
             "sourceColumn": "Nombre",
             "sourceProviderType": "WChar"
@@ -1241,11 +1333,12 @@
           {
             "name": "Id",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Id",
             "sourceProviderType": "Integer"
           },
           {
-            "name": "Nombre",
+            "name": "Nacionalidad",
             "dataType": "string",
             "sourceColumn": "Nombre",
             "sourceProviderType": "WChar"
@@ -1282,14 +1375,23 @@
           {
             "name": "Id",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Id",
             "sourceProviderType": "Integer"
           },
           {
             "name": "Nombre",
             "dataType": "string",
+            "isHidden": true,
             "sourceColumn": "Nombre",
             "sourceProviderType": "WChar"
+          },
+          {
+            "type": "calculated",
+            "name": "Rango",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "CONCATENATE(PN_TamanoMunicipio[Id],CONCATENATE(\" - \",PN_TamanoMunicipio[Nombre]))"
           }
         ],
         "partitions": [
@@ -1310,6 +1412,62 @@
           {
             "name": "_TM_ExtProp_DbTableName",
             "value": "PN_TamanoMunicipio"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "PN_EdadG",
+        "columns": [
+          {
+            "name": "Id",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Id",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "EdadG",
+            "dataType": "string",
+            "sourceColumn": "Nombre",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "type": "calculated",
+            "name": "EdadG2",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "CONCATENATE([Id2],CONCATENATE(\"- \",SUBSTITUTE([EDADG],RIGHT([EDADG],5),\"\")))"
+          },
+          {
+            "type": "calculated",
+            "name": "Id2",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "if(or(or(or(or(or(or(or(or(PN_EdadG[ID]=1 , PN_EdadG[ID]=2) ,PN_EdadG[ID]=3), PN_EdadG[ID]=4),PN_EdadG[ID]=5), PN_EdadG[ID]=6), PN_EdadG[ID]=7), PN_EdadG[ID]=8),PN_EdadG[ID]=9),CONCATENATE(\"0\",PN_EdadG[ID]),CONCATENATE(PN_EdadG[ID],\"\"))"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "PN_EdadG",
+            "dataView": "full",
+            "source": {
+              "query": " SELECT [dbo].[PN_EdadG].* FROM [dbo].[PN_EdadG] ",
+              "dataSource": "Padron_Navarra_SqlServer  "
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[PN_EdadG].* FROM [dbo].[PN_EdadG] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "PN_EdadG"
           },
           {
             "name": "_TM_ExtProp_DbSchemaName",
@@ -1348,13 +1506,6 @@
         "toColumn": "Id"
       },
       {
-        "name": "a0ef6d7c-96e4-42dd-953f-fb2d26f8b3fb",
-        "fromTable": "PN_FACT_Padron",
-        "fromColumn": "EdadG",
-        "toTable": "PN_EdadG2",
-        "toColumn": "Id"
-      },
-      {
         "name": "b31ee152-cd36-406a-92b0-144ee98af7b6",
         "fromTable": "PN_FACT_Padron",
         "fromColumn": "Edad4G",
@@ -1368,20 +1519,6 @@
         "toTable": "PN_Paises",
         "toColumn": "Id",
         "crossFilteringBehavior": "bothDirections"
-      },
-      {
-        "name": "43890a5a-8a18-4343-b7e2-c3df02e31206",
-        "fromTable": "PN_Municipios",
-        "fromColumn": "IdProvincia",
-        "toTable": "PN_Provincias",
-        "toColumn": "Id"
-      },
-      {
-        "name": "eca4b10e-79be-49e3-9225-89716e19aef3",
-        "fromTable": "PN_FACT_Padron",
-        "fromColumn": "IdMunicipio",
-        "toTable": "PN_Municipios",
-        "toColumn": "Id"
       },
       {
         "name": "96ffb6d7-e176-43f4-8fdc-41f705164b8a",
@@ -1465,6 +1602,34 @@
         "fromTable": "PN_FACT_Padron",
         "fromColumn": "IdContinentes2",
         "toTable": "PN_Continentes2",
+        "toColumn": "Id"
+      },
+      {
+        "name": "9f97c58c-7a1b-4c2a-82b0-0bdc98281aa5",
+        "fromTable": "PN_FACT_Padron",
+        "fromColumn": "IdNacionalidad",
+        "toTable": "PN_Nacionalidad",
+        "toColumn": "Id"
+      },
+      {
+        "name": "81e9fc26-3716-4865-ac51-10b164a94c00",
+        "fromTable": "PN_FACT_Padron",
+        "fromColumn": "EdadG",
+        "toTable": "PN_EdadG",
+        "toColumn": "Id"
+      },
+      {
+        "name": "0939abef-4a2a-44b9-814b-7db35061a68d",
+        "fromTable": "PN_FACT_Padron",
+        "fromColumn": "IdAux",
+        "toTable": "PN_Municipios",
+        "toColumn": "IdAux"
+      },
+      {
+        "name": "d3509dff-5afe-433b-b0aa-5f960621f6dc",
+        "fromTable": "PN_Municipios",
+        "fromColumn": "IdProvincia",
+        "toTable": "PN_Provincias",
         "toColumn": "Id"
       }
     ],

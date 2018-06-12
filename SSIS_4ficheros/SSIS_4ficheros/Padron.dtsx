@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Padron"
   DTS:PackageType="5"
-  DTS:VersionBuild="81"
-  DTS:VersionGUID="{2490CEE5-9092-492D-B7F8-8FAF4B6A9780}">
+  DTS:VersionBuild="84"
+  DTS:VersionGUID="{79148447-C63B-4B1E-867A-1CD18C4DB39F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -687,7 +687,6 @@
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:DelayValidation="True"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{F4AEE4D9-DE84-449C-B327-382204BEB8EA}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -763,7 +762,7 @@
                   <outputColumns>
                     <outputColumn
                       refId="Package\Fichero de datos\Derived Column.Outputs[Derived Column Output].Columns[FECHA]"
-                      dataType="dbTimeStamp"
+                      dataType="dbDate"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Fichero de datos\Derived Column.Outputs[Derived Column Output].Columns[FECHA]"
@@ -774,13 +773,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">(DT_DBTIMESTAMP)((DT_STR,4,1252)#{Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[ANO]} + "-01-01")</property>
+                          name="Expression">(DT_DBDATE)((DT_STR,4,1252)#{Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[ANO]} + "-01-01")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">(DT_DBTIMESTAMP)((DT_STR,4,1252)ANO + "-01-01")</property>
+                          name="FriendlyExpression">(DT_DBDATE)((DT_STR,4,1252)ANO + "-01-01")</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -894,7 +893,7 @@
                       lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[EDAD]" />
                     <inputColumn
                       refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].Columns[FECHA]"
-                      cachedDataType="dbTimeStamp"
+                      cachedDataType="dbDate"
                       cachedName="FECHA"
                       externalMetadataColumnId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[Fecha]"
                       lineageId="Package\Fichero de datos\Derived Column.Outputs[Derived Column Output].Columns[FECHA]" />
@@ -2194,7 +2193,7 @@
                       lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[EDAD]" />
                     <inputColumn
                       refId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input].Columns[FECHA]"
-                      cachedDataType="dbTimeStamp"
+                      cachedDataType="dbDate"
                       cachedName="FECHA"
                       externalMetadataColumnId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input].ExternalColumns[Fecha]"
                       lineageId="Package\Fichero de datos\Derived Column.Outputs[Derived Column Output].Columns[FECHA]" />
@@ -2423,7 +2422,8 @@
       DTS:From="Package\Fichero de datos"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\Actualizar LOG" />
+      DTS:To="Package\Actualizar LOG"
+      DTS:Value="1" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -2436,7 +2436,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="148,42"
           Id="Package\Actualizar LOG"
@@ -2490,7 +2490,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-15.24134765625,13.37548828125,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2502,25 +2504,47 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="138,42"
-          Id="Package\Fichero de datos\LOG_Padron"
-          TopLeft="405,382" />
-        <NodeLayout
-          Size="151,42"
-          Id="Package\Fichero de datos\Flat File Source"
-          TopLeft="143,37" />
+          Size="154,42"
+          Id="Package\Fichero de datos\Derived Column"
+          TopLeft="142,125" />
         <NodeLayout
           Size="142,42"
           Id="Package\Fichero de datos\FACT_Padron"
           TopLeft="146,215" />
         <NodeLayout
+          Size="151,42"
+          Id="Package\Fichero de datos\Flat File Source"
+          TopLeft="143,37" />
+        <NodeLayout
           Size="130,42"
           Id="Package\Fichero de datos\Row Count"
           TopLeft="406,289" />
         <NodeLayout
-          Size="154,42"
-          Id="Package\Fichero de datos\Derived Column"
-          TopLeft="142,125" />
+          Size="138,42"
+          Id="Package\Fichero de datos\LOG_Padron"
+          TopLeft="405,382" />
+        <EdgeLayout
+          Id="Package\Fichero de datos.Paths[Row Count Output 1]"
+          TopLeft="472.5,331">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51"
+              Start="0,0"
+              End="0,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Fichero de datos.Paths[OLE DB Destination Error Output]"
           TopLeft="217,257">
@@ -2601,33 +2625,11 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Fichero de datos.Paths[Row Count Output 1]"
-          TopLeft="472.5,331">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,51"
-              Start="0,0"
-              End="0,43.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Fichero de datos\LOG_Padron">
+    design-time-name="Package\Fichero de datos\FACT_Padron">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2640,7 +2642,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Fichero de datos\FACT_Padron">
+    design-time-name="Package\Fichero de datos\LOG_Padron">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

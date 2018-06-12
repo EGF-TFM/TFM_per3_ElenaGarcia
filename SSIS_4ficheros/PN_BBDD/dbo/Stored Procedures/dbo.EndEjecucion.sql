@@ -24,9 +24,9 @@ BEGIN
 	END
 
 	INSERT INTO LOG_Ejecuciones
-	(EjecucionId, EjecucionFecha, EjecucionPaqueteNombre, EjecucionEstado, EjecucionMensaje)
+	(EjecucionId, EjecucionFecha, EjecucionPaqueteNombre, EjecucionEstado, EjecucionMensaje,RowsInLog)
 	VALUES
-	(@EjecucionId, GETDATE(), @NombrePaquete, 'End', @NombrePaquete+' End')
+	(@EjecucionId, GETDATE(), @NombrePaquete, 'End', @NombrePaquete+' End',0)
 
 	
 END
