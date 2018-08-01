@@ -132,6 +132,13 @@
             "dataType": "string",
             "isDataTypeInferred": true,
             "expression": "CONCATENATE([ID],CONCATENATE(\"- \",SUBSTITUTE([EDAD4G],RIGHT([EDAD4G],5),\"\")))"
+          },
+          {
+            "type": "calculated",
+            "name": "Edad4g3",
+            "dataType": "string",
+            "isDataTypeInferred": false,
+            "expression": "IF(LEFT(PN_Edad4G[Edad4g2])=\"1\",\"< 15\",IF(LEFT(PN_Edad4G[Edad4g2])=\"2\",\"15 - 44\",IF(LEFT(PN_Edad4G[Edad4g2])=\"3\",\"45 - 64\",\"> 65\")))"
           }
         ],
         "partitions": [
@@ -170,7 +177,7 @@
             "sourceProviderType": "Integer"
           },
           {
-            "name": "Nombre",
+            "name": "ETN",
             "dataType": "string",
             "sourceColumn": "Nombre",
             "sourceProviderType": "WChar"
@@ -240,6 +247,7 @@
           {
             "name": "IdPais",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "IdPais",
             "sourceProviderType": "Integer"
           },
@@ -254,6 +262,7 @@
             "name": "EdadG",
             "dataType": "int64",
             "isDataTypeInferred": true,
+            "isHidden": true,
             "expression": "IF(AND([EDAD]>=0,[EDAD]<=4),1,if(AND([EDAD]>=5,[EDAD]<=9),2,if(AND([EDAD]>=10,[EDAD]<=14),3,if(AND([EDAD]>=15,[EDAD]<=19),4,if(AND([EDAD]>=20,[EDAD]<=24),5,if(AND([EDAD]>=25,[EDAD]<=29),6,if(AND([EDAD]>=30,[EDAD]<=34),7,if(AND([EDAD]>=35,[EDAD]<=39),8,if(AND([EDAD]>=40,[EDAD]<=44),9,if(AND([EDAD]>=45,[EDAD]<=49),10,if(AND([EDAD]>=50,[EDAD]<=54),11,if(AND([EDAD]>=55,[EDAD]<=59),12,if(AND([EDAD]>=60,[EDAD]<=64),13,if(AND([EDAD]>=65,[EDAD]<=69),14,if(AND([EDAD]>=70,[EDAD]<=74),15,if(AND([EDAD]>=75,[EDAD]<=79),16,if(AND([EDAD]>=80,[EDAD]<=84),17,if(AND([EDAD]>=85,[EDAD]<=89),18,if(AND([EDAD]>=90,[EDAD]<=94),19,if(AND([EDAD]>=95,[EDAD]<=99),20,if([EDAD]>=100,21)))))))))))))))))))))"
           },
           {
@@ -261,6 +270,7 @@
             "name": "Edad4G",
             "dataType": "int64",
             "isDataTypeInferred": true,
+            "isHidden": true,
             "expression": "IF([EDAD]<=15,1,if(AND([EDAD]>15,[EDAD]<=44),2,if(AND([EDAD]>=45,[EDAD]<=64),3,if([EDAD]>=65,4))))"
           },
           {
@@ -278,6 +288,7 @@
           {
             "name": "IdContinentes",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "IdContinentes"
           },
           {
@@ -355,6 +366,7 @@
             "name": "IdAux",
             "dataType": "string",
             "isDataTypeInferred": true,
+            "isHidden": true,
             "expression": "CONCATENATE(PN_FACT_Padron[IdMunicipio],PN_FACT_Padron[IdProvincia])"
           },
           {
@@ -362,6 +374,7 @@
             "name": "Provincia",
             "dataType": "string",
             "isDataTypeInferred": true,
+            "isHidden": true,
             "expression": "RELATED(PN_Provincias[Provincia])"
           },
           {
@@ -369,6 +382,7 @@
             "name": "Nacionalidad",
             "dataType": "string",
             "isDataTypeInferred": true,
+            "isHidden": true,
             "expression": "RELATED(PN_Nacionalidad[Nacionalidad])"
           },
           {
@@ -376,6 +390,7 @@
             "name": "Continente",
             "dataType": "string",
             "isDataTypeInferred": true,
+            "isHidden": true,
             "expression": "RELATED(PN_Pais_Continente[Continente])"
           },
           {
@@ -383,6 +398,7 @@
             "name": "Continente2",
             "dataType": "string",
             "isDataTypeInferred": true,
+            "isHidden": true,
             "expression": "RELATED(PN_Continentes2[Continente])"
           },
           {
@@ -390,6 +406,7 @@
             "name": "Categoría",
             "dataType": "string",
             "isDataTypeInferred": true,
+            "isHidden": true,
             "expression": "RELATED(PN_Categoria[Categoría])"
           },
           {
@@ -397,6 +414,7 @@
             "name": "Zona lingüística",
             "dataType": "string",
             "isDataTypeInferred": true,
+            "isHidden": true,
             "expression": "RELATED(PN_ZonasLing[Zonas lingüísticas])"
           },
           {
@@ -404,6 +422,7 @@
             "name": "Zonas 2000",
             "dataType": "string",
             "isDataTypeInferred": true,
+            "isHidden": true,
             "expression": "RELATED(PN_Zonas2000[Zonas 2000])"
           },
           {
@@ -411,6 +430,7 @@
             "name": "Zonas básicas salud",
             "dataType": "string",
             "isDataTypeInferred": true,
+            "isHidden": true,
             "expression": "RELATED(PN_ZonasBasicasSalud[Zonas de Salud])"
           },
           {
@@ -418,13 +438,15 @@
             "name": "Centros de atención a la mujer",
             "dataType": "string",
             "isDataTypeInferred": true,
-            "expression": "RELATED(PN_CentrosAtencionMujer[NoCentros de Atención Mujer])"
+            "isHidden": true,
+            "expression": "RELATED(PN_CentrosAtencionMujer[Centros de Atención Mujer])"
           },
           {
             "type": "calculated",
             "name": "Áreas de Salud",
             "dataType": "string",
             "isDataTypeInferred": true,
+            "isHidden": true,
             "expression": "RELATED(PN_AreasSalud[Áreas de Salud])"
           },
           {
@@ -432,6 +454,7 @@
             "name": "Servicios de Salud Mental",
             "dataType": "string",
             "isDataTypeInferred": true,
+            "isHidden": true,
             "expression": "RELATED(PN_ServiciosSaludMental[Servicios de salud mental])"
           },
           {
@@ -439,6 +462,7 @@
             "name": "Áreas",
             "dataType": "string",
             "isDataTypeInferred": true,
+            "isHidden": true,
             "expression": "RELATED(PN_Areas[Áreas])"
           },
           {
@@ -446,6 +470,7 @@
             "name": "Zonas SS",
             "dataType": "string",
             "isDataTypeInferred": true,
+            "isHidden": true,
             "expression": "RELATED(PN_ZonasSS[Zona_SS])"
           },
           {
@@ -453,13 +478,15 @@
             "name": "Municipio",
             "dataType": "string",
             "isDataTypeInferred": true,
-            "expression": "RELATED(PN_Municipios[Nombre])"
+            "isHidden": true,
+            "expression": "RELATED(PN_Municipios[Municipios])"
           },
           {
             "type": "calculated",
             "name": "Sexo",
             "dataType": "string",
             "isDataTypeInferred": true,
+            "isHidden": true,
             "expression": "RELATED(PN_Sexo[Sexo])"
           },
           {
@@ -467,7 +494,8 @@
             "name": "Nivel de estudios",
             "dataType": "string",
             "isDataTypeInferred": true,
-            "expression": "RELATED(PN_NivelEstudios[Nombre])"
+            "isHidden": true,
+            "expression": "RELATED(PN_NivelEstudios[NivelEstudios])"
           }
         ],
         "partitions": [
@@ -618,7 +646,7 @@
             "sourceProviderType": "Integer"
           },
           {
-            "name": "Nombre",
+            "name": "NivelEstudios",
             "dataType": "string",
             "sourceColumn": "Nombre",
             "sourceProviderType": "WChar"
@@ -796,7 +824,6 @@
           {
             "name": "Id",
             "dataType": "int64",
-            "isHidden": true,
             "sourceColumn": "Id",
             "sourceProviderType": "Integer"
           },
@@ -930,7 +957,6 @@
           {
             "name": "Id",
             "dataType": "int64",
-            "isHidden": true,
             "sourceColumn": "Id",
             "sourceProviderType": "Integer"
           },
@@ -977,7 +1003,7 @@
             "sourceProviderType": "Integer"
           },
           {
-            "name": "NoCentros de Atención Mujer",
+            "name": "Centros de Atención Mujer",
             "dataType": "string",
             "sourceColumn": "Nombre",
             "sourceProviderType": "WChar"
@@ -1182,12 +1208,11 @@
           {
             "name": "Id",
             "dataType": "int64",
-            "isHidden": true,
             "sourceColumn": "Id",
             "sourceProviderType": "Integer"
           },
           {
-            "name": "Nombre",
+            "name": "Municipios",
             "dataType": "string",
             "sourceColumn": "Nombre",
             "sourceProviderType": "WChar"

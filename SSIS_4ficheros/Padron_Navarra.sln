@@ -13,7 +13,8 @@ Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Padron_Navarra_Reporting", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dashboard Usuario final", "Dashboard Usuario final", "{872A304D-13A7-45AA-B6EB-0CF6F4D05867}"
 	ProjectSection(SolutionItems) = preProject
-		Dashboard Usuario final\PadronUsuarioFinal.pbix = Dashboard Usuario final\PadronUsuarioFinal.pbix
+		Dashboard Usuario final\PNUsuarioFinal.pbix = Dashboard Usuario final\PNUsuarioFinal.pbix
+		Dashboard Usuario final\PNUsuarioFinal_Movil.pbix = Dashboard Usuario final\PNUsuarioFinal_Movil.pbix
 	EndProjectSection
 EndProject
 Global

@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Padron"
   DTS:PackageType="5"
-  DTS:VersionBuild="84"
-  DTS:VersionGUID="{79148447-C63B-4B1E-867A-1CD18C4DB39F}">
+  DTS:VersionBuild="86"
+  DTS:VersionGUID="{2F33A805-4FDD-456E-9F91-29674BA678FC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -22,7 +22,7 @@
       DTS:DTSID="{1849F94F-D8BB-471A-A69D-F33A1112AA28}"
       DTS:ObjectName="ConnectionFichero">
       <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[$Project::FicheroDatos]</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">@[$Project::RutaFichero]+ @[$Project::FicheroDatos]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\andres.moncada\Desktop\FicherosNavarra\padron2002_2017.dat">
+          DTS:ConnectionString="C:\Users\elena.garcia\Desktop\FicherosNavarra\padron2002_2017.dat">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -641,15 +641,6 @@
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:PackageParameters>
-    <DTS:PackageParameter
-      DTS:CreationName=""
-      DTS:DataType="8"
-      DTS:DTSID="{E85AC665-3567-4EA6-8DFD-BDA34701FA58}"
-      DTS:ObjectName="FicheroDatos">
-      <DTS:Property
-        DTS:DataType="8"
-        DTS:Name="ParameterValue">C:\Users\andres.moncada\Desktop\FicherosNavarra\padron2002_2017.dat</DTS:Property>
-    </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
@@ -2440,40 +2431,18 @@
         <NodeLayout
           Size="148,42"
           Id="Package\Actualizar LOG"
-          TopLeft="157,330" />
+          TopLeft="128,259" />
         <NodeLayout
           Size="157,42"
           Id="Package\Fichero de datos"
-          TopLeft="157,244" />
+          TopLeft="128,139" />
         <NodeLayout
           Size="150,42"
           Id="Package\Truncate Table"
-          TopLeft="157,157" />
+          TopLeft="129,53" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="233.75,199">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45"
-              Start="0,0"
-              End="0,37.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="233.25,286">
+          TopLeft="205.25,95">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2490,8 +2459,30 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="204.25,181">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,78"
+              Start="0,0"
+              End="0,70.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,70.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-15.24134765625,13.37548828125,30.4826953125,9.7490234375"
+              BoundingBox="-15.24134765625,30.37548828125,30.4826953125,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2506,26 +2497,26 @@
         <NodeLayout
           Size="154,42"
           Id="Package\Fichero de datos\Derived Column"
-          TopLeft="142,125" />
+          TopLeft="18,102" />
         <NodeLayout
           Size="142,42"
           Id="Package\Fichero de datos\FACT_Padron"
-          TopLeft="146,215" />
+          TopLeft="22,192" />
         <NodeLayout
           Size="151,42"
           Id="Package\Fichero de datos\Flat File Source"
-          TopLeft="143,37" />
+          TopLeft="19,14" />
         <NodeLayout
           Size="130,42"
           Id="Package\Fichero de datos\Row Count"
-          TopLeft="406,289" />
+          TopLeft="282,266" />
         <NodeLayout
           Size="138,42"
           Id="Package\Fichero de datos\LOG_Padron"
-          TopLeft="405,382" />
+          TopLeft="281,359" />
         <EdgeLayout
           Id="Package\Fichero de datos.Paths[Row Count Output 1]"
-          TopLeft="472.5,331">
+          TopLeft="348.5,308">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2547,7 +2538,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fichero de datos.Paths[OLE DB Destination Error Output]"
-          TopLeft="217,257">
+          TopLeft="93,234">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2583,7 +2574,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fichero de datos.Paths[Flat File Source Output]"
-          TopLeft="218.75,79">
+          TopLeft="94.75,56">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2605,7 +2596,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fichero de datos.Paths[Derived Column Output]"
-          TopLeft="218,167">
+          TopLeft="94,144">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"

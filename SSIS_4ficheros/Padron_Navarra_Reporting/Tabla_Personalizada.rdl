@@ -196,7 +196,7 @@ NON EMPTY {
   } ON COLUMNS, 
 NON EMPTY {(
 	[PN_Sexo].[Id].[Id].allmembers,
-	[PN_Sexo].[Nombre].[Nombre].allmembers
+	[PN_Sexo].[Sexo].[Sexo].allmembers
 )} ON ROWS 
 FROM [Model]</CommandText>
         <rd:DesignerState>
@@ -219,12 +219,12 @@ FROM [Model]</CommandText>
                   <Item>
                     <ID xsi:type="Level">
                       <DimensionName>PN_Sexo</DimensionName>
-                      <HierarchyName>Nombre</HierarchyName>
-                      <HierarchyUniqueName>[PN_Sexo].[Nombre]</HierarchyUniqueName>
-                      <LevelName>Nombre</LevelName>
-                      <UniqueName>[PN_Sexo].[Nombre].[Nombre]</UniqueName>
+                      <HierarchyName>Sexo</HierarchyName>
+                      <HierarchyUniqueName>[PN_Sexo].[Sexo]</HierarchyUniqueName>
+                      <LevelName>Sexo</LevelName>
+                      <UniqueName>[PN_Sexo].[Sexo].[Sexo]</UniqueName>
                     </ID>
-                    <ItemCaption>Nombre</ItemCaption>
+                    <ItemCaption>Sexo</ItemCaption>
                   </Item>
                   <Item>
                     <ID xsi:type="Measure">
@@ -252,7 +252,7 @@ NON EMPTY {
   } ON COLUMNS, 
 NON EMPTY {(
 	[PN_Sexo].[Id].[Id].allmembers,
-	[PN_Sexo].[Nombre].[Nombre].allmembers
+	[PN_Sexo].[Sexo].[Sexo].allmembers
 )} ON ROWS 
 FROM [Model]
 </Statement>
@@ -266,8 +266,8 @@ FROM [Model]
           <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[PN_Sexo].[Id].[Id]" /&gt;</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Nombre">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[PN_Sexo].[Nombre].[Nombre]" /&gt;</DataField>
+        <Field Name="Sexo">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[PN_Sexo].[Sexo].[Sexo]" /&gt;</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Población">
@@ -372,8 +372,13 @@ NON EMPTY {
  } ON COLUMNS, 
 NON EMPTY {(
 	[PN_Areas].[Áreas].[Áreas].allmembers*
+	[PN_Zonas2000].[Zonas 2000].[Zonas 2000].allmembers*
+	[PN_Municipios].[Municipios].[Municipios].allmembers*
+	[PN_ZonasLing].[Zonas lingüísticas].[Zonas lingüísticas].allmembers*
+	[PN_NivelEstudios].[NivelEstudios].[NivelEstudios].allmembers*
 	[PN_Edad4G].[Edad4G].[Edad4G].allmembers*
-	[PN_Sexo].[Nombre].[Nombre].allmembers*
+	[PN_Sexo].[Sexo].[Sexo].allmembers*
+	[PN_Nacionalidad].[Nacionalidad].[Nacionalidad].allmembers*
 	 strtoset(@Ano_P)
 )} ON ROWS
 FROM [Model]
@@ -401,6 +406,46 @@ where (
                   </Item>
                   <Item>
                     <ID xsi:type="Level">
+                      <DimensionName>PN_Zonas2000</DimensionName>
+                      <HierarchyName>Zonas 2000</HierarchyName>
+                      <HierarchyUniqueName>[PN_Zonas2000].[Zonas 2000]</HierarchyUniqueName>
+                      <LevelName>Zonas 2000</LevelName>
+                      <UniqueName>[PN_Zonas2000].[Zonas 2000].[Zonas 2000]</UniqueName>
+                    </ID>
+                    <ItemCaption>Zonas 2000</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>PN_Municipios</DimensionName>
+                      <HierarchyName>Municipios</HierarchyName>
+                      <HierarchyUniqueName>[PN_Municipios].[Municipios]</HierarchyUniqueName>
+                      <LevelName>Municipios</LevelName>
+                      <UniqueName>[PN_Municipios].[Municipios].[Municipios]</UniqueName>
+                    </ID>
+                    <ItemCaption>Municipios</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>PN_ZonasLing</DimensionName>
+                      <HierarchyName>Zonas lingüísticas</HierarchyName>
+                      <HierarchyUniqueName>[PN_ZonasLing].[Zonas lingüísticas]</HierarchyUniqueName>
+                      <LevelName>Zonas lingüísticas</LevelName>
+                      <UniqueName>[PN_ZonasLing].[Zonas lingüísticas].[Zonas lingüísticas]</UniqueName>
+                    </ID>
+                    <ItemCaption>Zonas lingüísticas</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>PN_NivelEstudios</DimensionName>
+                      <HierarchyName>NivelEstudios</HierarchyName>
+                      <HierarchyUniqueName>[PN_NivelEstudios].[NivelEstudios]</HierarchyUniqueName>
+                      <LevelName>NivelEstudios</LevelName>
+                      <UniqueName>[PN_NivelEstudios].[NivelEstudios].[NivelEstudios]</UniqueName>
+                    </ID>
+                    <ItemCaption>NivelEstudios</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
                       <DimensionName>PN_Edad4G</DimensionName>
                       <HierarchyName>Edad4G</HierarchyName>
                       <HierarchyUniqueName>[PN_Edad4G].[Edad4G]</HierarchyUniqueName>
@@ -412,12 +457,22 @@ where (
                   <Item>
                     <ID xsi:type="Level">
                       <DimensionName>PN_Sexo</DimensionName>
-                      <HierarchyName>Nombre</HierarchyName>
-                      <HierarchyUniqueName>[PN_Sexo].[Nombre]</HierarchyUniqueName>
-                      <LevelName>Nombre</LevelName>
-                      <UniqueName>[PN_Sexo].[Nombre].[Nombre]</UniqueName>
+                      <HierarchyName>Sexo</HierarchyName>
+                      <HierarchyUniqueName>[PN_Sexo].[Sexo]</HierarchyUniqueName>
+                      <LevelName>Sexo</LevelName>
+                      <UniqueName>[PN_Sexo].[Sexo].[Sexo]</UniqueName>
                     </ID>
-                    <ItemCaption>Nombre</ItemCaption>
+                    <ItemCaption>Sexo</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>PN_Nacionalidad</DimensionName>
+                      <HierarchyName>Nacionalidad</HierarchyName>
+                      <HierarchyUniqueName>[PN_Nacionalidad].[Nacionalidad]</HierarchyUniqueName>
+                      <LevelName>Nacionalidad</LevelName>
+                      <UniqueName>[PN_Nacionalidad].[Nacionalidad].[Nacionalidad]</UniqueName>
+                    </ID>
+                    <ItemCaption>Nacionalidad</ItemCaption>
                   </Item>
                   <Item>
                     <ID xsi:type="Level">
@@ -455,8 +510,13 @@ NON EMPTY {
  } ON COLUMNS, 
 NON EMPTY {(
 	[PN_Areas].[Áreas].[Áreas].allmembers*
+	[PN_Zonas2000].[Zonas 2000].[Zonas 2000].allmembers*
+	[PN_Municipios].[Municipios].[Municipios].allmembers*
+	[PN_ZonasLing].[Zonas lingüísticas].[Zonas lingüísticas].allmembers*
+	[PN_NivelEstudios].[NivelEstudios].[NivelEstudios].allmembers*
 	[PN_Edad4G].[Edad4G].[Edad4G].allmembers*
-	[PN_Sexo].[Nombre].[Nombre].allmembers*
+	[PN_Sexo].[Sexo].[Sexo].allmembers*
+	[PN_Nacionalidad].[Nacionalidad].[Nacionalidad].allmembers*
 	 strtoset(@Ano_P)
 )} ON ROWS
 FROM [Model]
@@ -464,8 +524,7 @@ where (
             strtoset(@Areas_P),
             strtoset(@Edades_P),
             strtoset(@Sexo_P)
-)
-</Statement>
+)</Statement>
               <ParameterDefinitions>
                 <ParameterDefinition>
                   <Name>Areas_P</Name>
@@ -546,16 +605,268 @@ where (
           <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[PN_Areas].[Áreas].[Áreas]" /&gt;</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="Zonas_2000">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[PN_Zonas2000].[Zonas 2000].[Zonas 2000]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Municipios">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[PN_Municipios].[Municipios].[Municipios]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="Edad4G">
           <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[PN_Edad4G].[Edad4G].[Edad4G]" /&gt;</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Nombre">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[PN_Sexo].[Nombre].[Nombre]" /&gt;</DataField>
+        <Field Name="NivelEstudios">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[PN_NivelEstudios].[NivelEstudios].[NivelEstudios]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Sexo">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[PN_Sexo].[Sexo].[Sexo]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Zonas_lingüísticas">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[PN_ZonasLing].[Zonas lingüísticas].[Zonas lingüísticas]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Nacionalidad">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[PN_Nacionalidad].[Nacionalidad].[Nacionalidad]" /&gt;</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Año">
           <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[PN_FACT_Padron].[Año].[Año]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Población">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Población]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="Nacionalidad">
+      <Query>
+        <DataSourceName>Padron_Navarra_conexion</DataSourceName>
+        <CommandText>SELECT 
+NON EMPTY {
+	[Measures].[Población]
+  } ON COLUMNS, 
+NON EMPTY {(
+                  [PN_Nacionalidad].[Nacionalidad].allmembers
+)} ON ROWS 
+FROM [Model]</CommandText>
+        <rd:DesignerState>
+          <QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>PN_Nacionalidad</DimensionName>
+                      <HierarchyName>Nacionalidad</HierarchyName>
+                      <HierarchyUniqueName>[PN_Nacionalidad].[Nacionalidad]</HierarchyUniqueName>
+                      <LevelName>Nacionalidad</LevelName>
+                      <UniqueName>[PN_Nacionalidad].[Nacionalidad].[Nacionalidad]</UniqueName>
+                    </ID>
+                    <ItemCaption>Nacionalidad</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>Población</MeasureName>
+                      <UniqueName>[Measures].[Población]</UniqueName>
+                    </ID>
+                    <ItemCaption>Población</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <AutoExecute>false</AutoExecute>
+              <From>Model</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>SELECT 
+NON EMPTY {
+	[Measures].[Población]
+  } ON COLUMNS, 
+NON EMPTY {(
+                  [PN_Nacionalidad].[Nacionalidad].allmembers
+)} ON ROWS 
+FROM [Model]</Statement>
+              <ParameterDefinitions />
+            </Query>
+          </QueryDefinition>
+        </rd:DesignerState>
+      </Query>
+      <Fields>
+        <Field Name="Nacionalidad">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[PN_Nacionalidad].[Nacionalidad].[Nacionalidad]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Población">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Población]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="Zonas2000">
+      <Query>
+        <DataSourceName>Padron_Navarra_conexion</DataSourceName>
+        <CommandText>SELECT 
+NON EMPTY {
+	[Measures].[Población]
+  } ON COLUMNS, 
+NON EMPTY {(
+                [PN_Zonas2000].[Zonas 2000].[Zonas 2000].allmembers
+)} ON ROWS 
+FROM [Model]</CommandText>
+        <rd:DesignerState>
+          <QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>PN_Zonas2000</DimensionName>
+                      <HierarchyName>Zonas 2000</HierarchyName>
+                      <HierarchyUniqueName>[PN_Zonas2000].[Zonas 2000]</HierarchyUniqueName>
+                      <LevelName>Zonas 2000</LevelName>
+                      <UniqueName>[PN_Zonas2000].[Zonas 2000].[Zonas 2000]</UniqueName>
+                    </ID>
+                    <ItemCaption>Zonas 2000</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>Población</MeasureName>
+                      <UniqueName>[Measures].[Población]</UniqueName>
+                    </ID>
+                    <ItemCaption>Población</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <AutoExecute>false</AutoExecute>
+              <From>Model</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>SELECT 
+NON EMPTY {
+	[Measures].[Población]
+  } ON COLUMNS, 
+NON EMPTY {(
+                [PN_Zonas2000].[Zonas 2000].[Zonas 2000].allmembers
+)} ON ROWS 
+FROM [Model]</Statement>
+              <ParameterDefinitions />
+            </Query>
+          </QueryDefinition>
+        </rd:DesignerState>
+      </Query>
+      <Fields>
+        <Field Name="Zonas_2000">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[PN_Zonas2000].[Zonas 2000].[Zonas 2000]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Población">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Población]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="ZonasLing">
+      <Query>
+        <DataSourceName>Padron_Navarra_conexion</DataSourceName>
+        <CommandText>SELECT 
+NON EMPTY {
+	[Measures].[Población]
+  } ON COLUMNS, 
+NON EMPTY {(
+            [PN_ZonasLing].[Zonas lingüísticas].[Zonas lingüísticas].allmembers*
+			[PN_ZonasLing].[Id].[Id].allmembers
+)} ON ROWS 
+FROM [Model]</CommandText>
+        <rd:DesignerState>
+          <QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>PN_ZonasLing</DimensionName>
+                      <HierarchyName>Zonas lingüísticas</HierarchyName>
+                      <HierarchyUniqueName>[PN_ZonasLing].[Zonas lingüísticas]</HierarchyUniqueName>
+                      <LevelName>Zonas lingüísticas</LevelName>
+                      <UniqueName>[PN_ZonasLing].[Zonas lingüísticas].[Zonas lingüísticas]</UniqueName>
+                    </ID>
+                    <ItemCaption>Zonas lingüísticas</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>PN_ZonasLing</DimensionName>
+                      <HierarchyName>Id</HierarchyName>
+                      <HierarchyUniqueName>[PN_ZonasLing].[Id]</HierarchyUniqueName>
+                      <LevelName>Id</LevelName>
+                      <UniqueName>[PN_ZonasLing].[Id].[Id]</UniqueName>
+                    </ID>
+                    <ItemCaption>Id</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>Población</MeasureName>
+                      <UniqueName>[Measures].[Población]</UniqueName>
+                    </ID>
+                    <ItemCaption>Población</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <AutoExecute>false</AutoExecute>
+              <From>Model</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>SELECT 
+NON EMPTY {
+	[Measures].[Población]
+  } ON COLUMNS, 
+NON EMPTY {(
+            [PN_ZonasLing].[Zonas lingüísticas].[Zonas lingüísticas].allmembers*
+			[PN_ZonasLing].[Id].[Id].allmembers
+)} ON ROWS 
+FROM [Model]</Statement>
+              <ParameterDefinitions />
+            </Query>
+          </QueryDefinition>
+        </rd:DesignerState>
+      </Query>
+      <Fields>
+        <Field Name="Zonas_lingüísticas">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[PN_ZonasLing].[Zonas lingüísticas].[Zonas lingüísticas]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Id">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[PN_ZonasLing].[Id].[Id]" /&gt;</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Población">
@@ -575,7 +886,7 @@ where (
                 <TablixCornerRow>
                   <TablixCornerCell>
                     <CellContents>
-                      <Textbox Name="Textbox18">
+                      <Textbox Name="TBAreas">
                         <CanGrow>true</CanGrow>
                         <KeepTogether>true</KeepTogether>
                         <Paragraphs>
@@ -591,7 +902,6 @@ where (
                             <Style />
                           </Paragraph>
                         </Paragraphs>
-                        <rd:DefaultName>Textbox18</rd:DefaultName>
                         <Style>
                           <Border>
                             <Style>None</Style>
@@ -606,7 +916,7 @@ where (
                   </TablixCornerCell>
                   <TablixCornerCell>
                     <CellContents>
-                      <Textbox Name="Textbox20">
+                      <Textbox Name="Textbox47">
                         <CanGrow>true</CanGrow>
                         <KeepTogether>true</KeepTogether>
                         <Paragraphs>
@@ -622,7 +932,37 @@ where (
                             <Style />
                           </Paragraph>
                         </Paragraphs>
-                        <rd:DefaultName>Textbox20</rd:DefaultName>
+                        <rd:DefaultName>Textbox47</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Style>None</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixCornerCell>
+                  <TablixCornerCell>
+                    <CellContents>
+                      <Textbox Name="TBAño">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Año</Value>
+                                <Style>
+                                  <FontFamily>Calibri</FontFamily>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
                         <Style>
                           <Border>
                             <Style>None</Style>
@@ -639,14 +979,14 @@ where (
                 <TablixCornerRow>
                   <TablixCornerCell>
                     <CellContents>
-                      <Textbox Name="Textbox19">
+                      <Textbox Name="Textbox7">
                         <CanGrow>true</CanGrow>
                         <KeepTogether>true</KeepTogether>
                         <Paragraphs>
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>Areas</Value>
+                                <Value />
                                 <Style>
                                   <FontFamily>Arial</FontFamily>
                                 </Style>
@@ -655,10 +995,7 @@ where (
                             <Style />
                           </Paragraph>
                         </Paragraphs>
-                        <rd:DefaultName>Textbox19</rd:DefaultName>
-                        <Visibility>
-                          <Hidden>true</Hidden>
-                        </Visibility>
+                        <rd:DefaultName>Textbox7</rd:DefaultName>
                         <Style>
                           <Border>
                             <Style>None</Style>
@@ -673,24 +1010,146 @@ where (
                   </TablixCornerCell>
                   <TablixCornerCell>
                     <CellContents>
-                      <Textbox Name="Textbox16">
+                      <Textbox Name="Textbox48">
                         <CanGrow>true</CanGrow>
                         <KeepTogether>true</KeepTogether>
                         <Paragraphs>
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>Edad4G</Value>
-                                <Style />
+                                <Value />
+                                <Style>
+                                  <FontFamily>Arial</FontFamily>
+                                </Style>
                               </TextRun>
                             </TextRuns>
                             <Style />
                           </Paragraph>
                         </Paragraphs>
-                        <rd:DefaultName>Textbox16</rd:DefaultName>
-                        <Visibility>
-                          <Hidden>true</Hidden>
-                        </Visibility>
+                        <rd:DefaultName>Textbox48</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Style>None</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixCornerCell>
+                  <TablixCornerCell>
+                    <CellContents>
+                      <Textbox Name="TBNacionalidad">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Nacionalidad</Value>
+                                <Style>
+                                  <FontFamily>Calibri</FontFamily>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <Style>
+                          <Border>
+                            <Style>None</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixCornerCell>
+                </TablixCornerRow>
+                <TablixCornerRow>
+                  <TablixCornerCell>
+                    <CellContents>
+                      <Textbox Name="Textbox37">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value />
+                                <Style>
+                                  <FontFamily>Arial</FontFamily>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox37</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Style>None</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixCornerCell>
+                  <TablixCornerCell>
+                    <CellContents>
+                      <Textbox Name="TBZonaL">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Zonas lingüísticas</Value>
+                                <Style>
+                                  <FontFamily>Arial</FontFamily>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <Style>
+                          <Border>
+                            <Style>None</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixCornerCell>
+                  <TablixCornerCell>
+                    <CellContents>
+                      <Textbox Name="TBEdad">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Grupos de Edad</Value>
+                                <Style>
+                                  <FontFamily>Calibri</FontFamily>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
                         <Style>
                           <Border>
                             <Style>None</Style>
@@ -718,6 +1177,44 @@ where (
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
+                        <Textbox Name="Población2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Población.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Población2</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DimGray</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
                         <Textbox Name="Población">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -726,7 +1223,9 @@ where (
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Sum(Fields!Población.Value)</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -738,6 +1237,7 @@ where (
                               <Color>DimGray</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -762,6 +1262,7 @@ where (
                                 <TextRun>
                                   <Value>=Sum(Fields!Población.Value)</Value>
                                   <Style>
+                                    <FontFamily>Calibri</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -775,6 +1276,7 @@ where (
                               <Color>DimGray</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>White</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -812,7 +1314,10 @@ where (
                               <TextRun>
                                 <Value>=Fields!Año.Value</Value>
                                 <Style>
+                                  <FontFamily>Calibri</FontFamily>
+                                  <FontSize>11pt</FontSize>
                                   <FontWeight>Bold</FontWeight>
+                                  <Color>White</Color>
                                 </Style>
                               </TextRun>
                             </TextRuns>
@@ -827,7 +1332,7 @@ where (
                             <Color>DimGray</Color>
                             <Style>Solid</Style>
                           </Border>
-                          <BackgroundColor>LightBlue</BackgroundColor>
+                          <BackgroundColor>#ff4549</BackgroundColor>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -838,44 +1343,102 @@ where (
                   </TablixHeader>
                   <TablixMembers>
                     <TablixMember>
-                      <Group Name="Nombre">
+                      <Group Name="NacionalidadGroup">
                         <GroupExpressions>
-                          <GroupExpression>=Fields!Nombre.Value</GroupExpression>
+                          <GroupExpression>=Fields!Nacionalidad.Value</GroupExpression>
                         </GroupExpressions>
                       </Group>
                       <SortExpressions>
                         <SortExpression>
-                          <Value>=Fields!Nombre.Value</Value>
+                          <Value>=Fields!Nacionalidad.Value</Value>
                         </SortExpression>
                       </SortExpressions>
+                      <TablixHeader>
+                        <Size>0.25in</Size>
+                        <CellContents>
+                          <Textbox Name="Nacionalidad1">
+                            <CanGrow>true</CanGrow>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value>=Fields!Nacionalidad.Value</Value>
+                                    <Style>
+                                      <FontFamily>Calibri</FontFamily>
+                                      <FontSize>11pt</FontSize>
+                                      <FontWeight>Bold</FontWeight>
+                                      <Color>White</Color>
+                                    </Style>
+                                  </TextRun>
+                                </TextRuns>
+                                <Style>
+                                  <TextAlign>Center</TextAlign>
+                                </Style>
+                              </Paragraph>
+                            </Paragraphs>
+                            <rd:DefaultName>Nacionalidad1</rd:DefaultName>
+                            <Visibility>
+                              <Hidden>true</Hidden>
+                              <ToggleItem>TBNacionalidad</ToggleItem>
+                            </Visibility>
+                            <Style>
+                              <Border>
+                                <Color>DimGray</Color>
+                                <Style>Solid</Style>
+                              </Border>
+                              <BackgroundColor>#ff4549</BackgroundColor>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
                       <TablixMembers>
                         <TablixMember>
+                          <Group Name="SexoGroup">
+                            <GroupExpressions>
+                              <GroupExpression>=Fields!Sexo.Value</GroupExpression>
+                            </GroupExpressions>
+                          </Group>
+                          <SortExpressions>
+                            <SortExpression>
+                              <Value>=Fields!Sexo.Value</Value>
+                            </SortExpression>
+                          </SortExpressions>
                           <TablixHeader>
                             <Size>0.25in</Size>
                             <CellContents>
-                              <Textbox Name="Nombre1">
+                              <Textbox Name="Sexo1">
                                 <CanGrow>true</CanGrow>
                                 <KeepTogether>true</KeepTogether>
                                 <Paragraphs>
                                   <Paragraph>
                                     <TextRuns>
                                       <TextRun>
-                                        <Value>=Fields!Nombre.Value</Value>
+                                        <Value>=Fields!Sexo.Value</Value>
                                         <Style>
+                                          <FontFamily>Calibri</FontFamily>
+                                          <FontSize>11pt</FontSize>
                                           <FontWeight>Bold</FontWeight>
+                                          <Color>White</Color>
                                         </Style>
                                       </TextRun>
                                     </TextRuns>
-                                    <Style />
+                                    <Style>
+                                      <TextAlign>Center</TextAlign>
+                                    </Style>
                                   </Paragraph>
                                 </Paragraphs>
-                                <rd:DefaultName>Nombre1</rd:DefaultName>
+                                <rd:DefaultName>Sexo1</rd:DefaultName>
                                 <Style>
                                   <Border>
                                     <Color>DimGray</Color>
                                     <Style>Solid</Style>
                                   </Border>
-                                  <BackgroundColor>LightBlue</BackgroundColor>
+                                  <BackgroundColor>#ff4549</BackgroundColor>
                                   <PaddingLeft>2pt</PaddingLeft>
                                   <PaddingRight>2pt</PaddingRight>
                                   <PaddingTop>2pt</PaddingTop>
@@ -889,8 +1452,16 @@ where (
                           </TablixMembers>
                         </TablixMember>
                       </TablixMembers>
+                      <Visibility>
+                        <Hidden>true</Hidden>
+                        <ToggleItem>TBNacionalidad</ToggleItem>
+                      </Visibility>
                     </TablixMember>
                   </TablixMembers>
+                  <Visibility>
+                    <Hidden>true</Hidden>
+                    <ToggleItem>TBAño</ToggleItem>
+                  </Visibility>
                 </TablixMember>
               </TablixMembers>
             </TablixColumnHierarchy>
@@ -907,99 +1478,22 @@ where (
                       <Value>=Fields!Áreas.Value</Value>
                     </SortExpression>
                   </SortExpressions>
-                  <TablixHeader>
-                    <Size>1in</Size>
-                    <CellContents>
-                      <Textbox Name="Áreas">
-                        <CanGrow>true</CanGrow>
-                        <KeepTogether>true</KeepTogether>
-                        <Paragraphs>
-                          <Paragraph>
-                            <TextRuns>
-                              <TextRun>
-                                <Value>=Fields!Áreas.Value</Value>
-                                <Style>
-                                  <FontFamily>Arial</FontFamily>
-                                  <FontWeight>Bold</FontWeight>
-                                </Style>
-                              </TextRun>
-                            </TextRuns>
-                            <Style />
-                          </Paragraph>
-                        </Paragraphs>
-                        <rd:DefaultName>Áreas</rd:DefaultName>
-                        <Style>
-                          <Border>
-                            <Color>DimGray</Color>
-                            <Style>Solid</Style>
-                          </Border>
-                          <BackgroundColor>LightBlue</BackgroundColor>
-                          <PaddingLeft>2pt</PaddingLeft>
-                          <PaddingRight>2pt</PaddingRight>
-                          <PaddingTop>2pt</PaddingTop>
-                          <PaddingBottom>2pt</PaddingBottom>
-                        </Style>
-                      </Textbox>
-                    </CellContents>
-                  </TablixHeader>
                   <TablixMembers>
                     <TablixMember>
-                      <Group Name="Edad4Group">
-                        <GroupExpressions>
-                          <GroupExpression>=Fields!Edad4G.Value</GroupExpression>
-                        </GroupExpressions>
-                      </Group>
-                      <SortExpressions>
-                        <SortExpression>
-                          <Value>=Fields!Edad4G.Value</Value>
-                        </SortExpression>
-                      </SortExpressions>
                       <TablixHeader>
-                        <Size>1.38542in</Size>
+                        <Size>1in</Size>
                         <CellContents>
-                          <Textbox Name="Edad4G1">
+                          <Textbox Name="Áreas">
                             <CanGrow>true</CanGrow>
                             <KeepTogether>true</KeepTogether>
                             <Paragraphs>
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>=Fields!Edad4G.Value</Value>
-                                    <Style />
-                                  </TextRun>
-                                </TextRuns>
-                                <Style />
-                              </Paragraph>
-                            </Paragraphs>
-                            <rd:DefaultName>Edad4G1</rd:DefaultName>
-                            <Style>
-                              <Border>
-                                <Color>DimGray</Color>
-                                <Style>Solid</Style>
-                              </Border>
-                              <BackgroundColor>LightBlue</BackgroundColor>
-                              <PaddingLeft>2pt</PaddingLeft>
-                              <PaddingRight>2pt</PaddingRight>
-                              <PaddingTop>2pt</PaddingTop>
-                              <PaddingBottom>2pt</PaddingBottom>
-                            </Style>
-                          </Textbox>
-                        </CellContents>
-                      </TablixHeader>
-                    </TablixMember>
-                    <TablixMember>
-                      <TablixHeader>
-                        <Size>1.38542in</Size>
-                        <CellContents>
-                          <Textbox Name="Textbox8">
-                            <CanGrow>true</CanGrow>
-                            <KeepTogether>true</KeepTogether>
-                            <Paragraphs>
-                              <Paragraph>
-                                <TextRuns>
-                                  <TextRun>
-                                    <Value>Total</Value>
+                                    <Value>=Fields!Áreas.Value</Value>
                                     <Style>
+                                      <FontFamily>Calibri</FontFamily>
+                                      <FontSize>11pt</FontSize>
                                       <FontWeight>Bold</FontWeight>
                                     </Style>
                                   </TextRun>
@@ -1007,13 +1501,13 @@ where (
                                 <Style />
                               </Paragraph>
                             </Paragraphs>
-                            <rd:DefaultName>Textbox8</rd:DefaultName>
+                            <rd:DefaultName>Áreas</rd:DefaultName>
                             <Style>
                               <Border>
                                 <Color>DimGray</Color>
                                 <Style>Solid</Style>
                               </Border>
-                              <BackgroundColor>LightBlue</BackgroundColor>
+                              <BackgroundColor>Silver</BackgroundColor>
                               <PaddingLeft>2pt</PaddingLeft>
                               <PaddingRight>2pt</PaddingRight>
                               <PaddingTop>2pt</PaddingTop>
@@ -1022,7 +1516,232 @@ where (
                           </Textbox>
                         </CellContents>
                       </TablixHeader>
-                      <KeepWithGroup>Before</KeepWithGroup>
+                      <TablixMembers>
+                        <TablixMember>
+                          <Group Name="Zonas_lingüísticas">
+                            <GroupExpressions>
+                              <GroupExpression>=Fields!Zonas_lingüísticas.Value</GroupExpression>
+                            </GroupExpressions>
+                          </Group>
+                          <SortExpressions>
+                            <SortExpression>
+                              <Value>=Fields!Zonas_lingüísticas.Value</Value>
+                            </SortExpression>
+                          </SortExpressions>
+                          <TablixHeader>
+                            <Size>1in</Size>
+                            <CellContents>
+                              <Textbox Name="Zonas_lingüísticas">
+                                <CanGrow>true</CanGrow>
+                                <KeepTogether>true</KeepTogether>
+                                <Paragraphs>
+                                  <Paragraph>
+                                    <TextRuns>
+                                      <TextRun>
+                                        <Value>=Fields!Zonas_lingüísticas.Value</Value>
+                                        <Style>
+                                          <FontFamily>Calibri</FontFamily>
+                                          <FontSize>11pt</FontSize>
+                                          <FontWeight>Bold</FontWeight>
+                                        </Style>
+                                      </TextRun>
+                                    </TextRuns>
+                                    <Style />
+                                  </Paragraph>
+                                </Paragraphs>
+                                <rd:DefaultName>Zonas_lingüísticas</rd:DefaultName>
+                                <Style>
+                                  <Border>
+                                    <Color>DimGray</Color>
+                                    <Style>Solid</Style>
+                                  </Border>
+                                  <BackgroundColor>Silver</BackgroundColor>
+                                  <PaddingLeft>2pt</PaddingLeft>
+                                  <PaddingRight>2pt</PaddingRight>
+                                  <PaddingTop>2pt</PaddingTop>
+                                  <PaddingBottom>2pt</PaddingBottom>
+                                </Style>
+                              </Textbox>
+                            </CellContents>
+                          </TablixHeader>
+                          <TablixMembers>
+                            <TablixMember>
+                              <TablixHeader>
+                                <Size>1.38542in</Size>
+                                <CellContents>
+                                  <Textbox Name="Población1">
+                                    <CanGrow>true</CanGrow>
+                                    <KeepTogether>true</KeepTogether>
+                                    <Paragraphs>
+                                      <Paragraph>
+                                        <TextRuns>
+                                          <TextRun>
+                                            <Value />
+                                            <Style>
+                                              <FontFamily>Calibri</FontFamily>
+                                              <FontSize>11pt</FontSize>
+                                            </Style>
+                                          </TextRun>
+                                        </TextRuns>
+                                        <Style />
+                                      </Paragraph>
+                                    </Paragraphs>
+                                    <rd:DefaultName>Población1</rd:DefaultName>
+                                    <Style>
+                                      <Border>
+                                        <Color>DimGray</Color>
+                                        <Style>Solid</Style>
+                                      </Border>
+                                      <BackgroundColor>LightGrey</BackgroundColor>
+                                      <PaddingLeft>2pt</PaddingLeft>
+                                      <PaddingRight>2pt</PaddingRight>
+                                      <PaddingTop>2pt</PaddingTop>
+                                      <PaddingBottom>2pt</PaddingBottom>
+                                    </Style>
+                                  </Textbox>
+                                </CellContents>
+                              </TablixHeader>
+                              <KeepWithGroup>After</KeepWithGroup>
+                            </TablixMember>
+                            <TablixMember>
+                              <Group Name="Edad4Group">
+                                <GroupExpressions>
+                                  <GroupExpression>=Fields!Edad4G.Value</GroupExpression>
+                                </GroupExpressions>
+                              </Group>
+                              <SortExpressions>
+                                <SortExpression>
+                                  <Value>=Fields!Edad4G.Value</Value>
+                                </SortExpression>
+                              </SortExpressions>
+                              <TablixMembers>
+                                <TablixMember>
+                                  <TablixHeader>
+                                    <Size>1.38542in</Size>
+                                    <CellContents>
+                                      <Textbox Name="Edad4G1">
+                                        <CanGrow>true</CanGrow>
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value>=Fields!Edad4G.Value</Value>
+                                                <Style>
+                                                  <FontFamily>Calibri</FontFamily>
+                                                  <FontSize>11pt</FontSize>
+                                                </Style>
+                                              </TextRun>
+                                            </TextRuns>
+                                            <Style />
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <rd:DefaultName>Edad4G1</rd:DefaultName>
+                                        <Style>
+                                          <Border>
+                                            <Color>DimGray</Color>
+                                            <Style>Solid</Style>
+                                          </Border>
+                                          <BackgroundColor>LightGrey</BackgroundColor>
+                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <PaddingBottom>2pt</PaddingBottom>
+                                        </Style>
+                                      </Textbox>
+                                    </CellContents>
+                                  </TablixHeader>
+                                </TablixMember>
+                              </TablixMembers>
+                              <Visibility>
+                                <Hidden>true</Hidden>
+                                <ToggleItem>TBEdad</ToggleItem>
+                              </Visibility>
+                            </TablixMember>
+                          </TablixMembers>
+                          <Visibility>
+                            <Hidden>true</Hidden>
+                            <ToggleItem>TBZonaL</ToggleItem>
+                          </Visibility>
+                        </TablixMember>
+                        <TablixMember>
+                          <TablixHeader>
+                            <Size>1in</Size>
+                            <CellContents>
+                              <Textbox Name="Textbox51">
+                                <CanGrow>true</CanGrow>
+                                <KeepTogether>true</KeepTogether>
+                                <Paragraphs>
+                                  <Paragraph>
+                                    <TextRuns>
+                                      <TextRun>
+                                        <Value />
+                                        <Style>
+                                          <FontFamily>Calibri</FontFamily>
+                                          <FontSize>11pt</FontSize>
+                                          <FontWeight>Bold</FontWeight>
+                                        </Style>
+                                      </TextRun>
+                                    </TextRuns>
+                                    <Style />
+                                  </Paragraph>
+                                </Paragraphs>
+                                <rd:DefaultName>Textbox51</rd:DefaultName>
+                                <Style>
+                                  <Border>
+                                    <Color>DimGray</Color>
+                                    <Style>Solid</Style>
+                                  </Border>
+                                  <BackgroundColor>Silver</BackgroundColor>
+                                  <PaddingLeft>2pt</PaddingLeft>
+                                  <PaddingRight>2pt</PaddingRight>
+                                  <PaddingTop>2pt</PaddingTop>
+                                  <PaddingBottom>2pt</PaddingBottom>
+                                </Style>
+                              </Textbox>
+                            </CellContents>
+                          </TablixHeader>
+                          <TablixMembers>
+                            <TablixMember>
+                              <TablixHeader>
+                                <Size>1.38542in</Size>
+                                <CellContents>
+                                  <Textbox Name="Textbox8">
+                                    <CanGrow>true</CanGrow>
+                                    <KeepTogether>true</KeepTogether>
+                                    <Paragraphs>
+                                      <Paragraph>
+                                        <TextRuns>
+                                          <TextRun>
+                                            <Value>Total</Value>
+                                            <Style>
+                                              <FontFamily>Calibri</FontFamily>
+                                              <FontWeight>Bold</FontWeight>
+                                            </Style>
+                                          </TextRun>
+                                        </TextRuns>
+                                        <Style />
+                                      </Paragraph>
+                                    </Paragraphs>
+                                    <rd:DefaultName>Textbox8</rd:DefaultName>
+                                    <Style>
+                                      <Border>
+                                        <Color>DimGray</Color>
+                                        <Style>Solid</Style>
+                                      </Border>
+                                      <BackgroundColor>LightGrey</BackgroundColor>
+                                      <PaddingLeft>2pt</PaddingLeft>
+                                      <PaddingRight>2pt</PaddingRight>
+                                      <PaddingTop>2pt</PaddingTop>
+                                      <PaddingBottom>2pt</PaddingBottom>
+                                    </Style>
+                                  </Textbox>
+                                </CellContents>
+                              </TablixHeader>
+                            </TablixMember>
+                          </TablixMembers>
+                        </TablixMember>
+                      </TablixMembers>
                     </TablixMember>
                   </TablixMembers>
                 </TablixMember>
@@ -1038,12 +1757,13 @@ where (
             </SortExpressions>
             <Top>0.89459in</Top>
             <Left>0.16542in</Left>
-            <Height>1in</Height>
-            <Width>3.38542in</Width>
+            <Height>1.5in</Height>
+            <Width>4.38542in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <FontFamily>Calibri</FontFamily>
             </Style>
           </Tablix>
           <Chart Name="Grafico1">
@@ -1378,11 +2098,15 @@ where (
               </Style>
             </ChartNoDataMessage>
             <DataSetName>QueryResult</DataSetName>
-            <Top>0.89459in</Top>
-            <Left>4.1168in</Left>
+            <Top>1.11681in</Top>
+            <Left>5.21055in</Left>
             <Height>2.63542in</Height>
             <Width>3.57292in</Width>
             <ZIndex>1</ZIndex>
+            <Visibility>
+              <Hidden>true</Hidden>
+              <ToggleItem>TBGrafico1</ToggleItem>
+            </Visibility>
             <Style>
               <Border>
                 <Color>LightGrey</Color>
@@ -1743,11 +2467,15 @@ where (
               </Style>
             </ChartNoDataMessage>
             <DataSetName>QueryResult</DataSetName>
-            <Top>0.89459in</Top>
-            <Left>7.70361in</Left>
+            <Top>1.14459in</Top>
+            <Left>9.26264in</Left>
             <Height>2.63542in</Height>
             <Width>3.21875in</Width>
             <ZIndex>2</ZIndex>
+            <Visibility>
+              <Hidden>true</Hidden>
+              <ToggleItem>TBGrafico2</ToggleItem>
+            </Visibility>
             <Style>
               <Border>
                 <Color>LightGrey</Color>
@@ -1805,9 +2533,76 @@ where (
               </Border>
             </Style>
           </Line>
+          <Textbox Name="TBGrafico2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Grafico 2</Value>
+                    <Style>
+                      <FontFamily>Calibri</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>0.89459in</Top>
+            <Left>9.26264in</Left>
+            <Height>0.25in</Height>
+            <Width>1in</Width>
+            <ZIndex>5</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="TBGrafico1">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Grafico 1</Value>
+                    <Style>
+                      <FontFamily>Calibri</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>0.86681in</Top>
+            <Left>5.21055in</Left>
+            <Height>0.25in</Height>
+            <Width>1in</Width>
+            <ZIndex>6</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
         <Height>4.82167in</Height>
-        <Style />
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BackgroundColor>WhiteSmoke</BackgroundColor>
+        </Style>
       </Body>
       <Width>14.35292in</Width>
       <Page>
@@ -1820,18 +2615,23 @@ where (
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="Areas_P">
+    <ReportParameter Name="Ano_P">
       <DataType>String</DataType>
-      <Prompt>Area:</Prompt>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>Año</DataSetName>
+          <ValueField>Año</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Año:</Prompt>
       <ValidValues>
         <DataSetReference>
-          <DataSetName>Areas</DataSetName>
-          <ValueField>Id</ValueField>
-          <LabelField>Áreas</LabelField>
+          <DataSetName>Año</DataSetName>
+          <ValueField>Año</ValueField>
+          <LabelField>Año</LabelField>
         </DataSetReference>
       </ValidValues>
       <MultiValue>true</MultiValue>
-      <UsedInQuery>False</UsedInQuery>
     </ReportParameter>
     <ReportParameter Name="Edades_P">
       <DataType>String</DataType>
@@ -1864,25 +2664,80 @@ where (
         <DataSetReference>
           <DataSetName>Sexo</DataSetName>
           <ValueField>Id</ValueField>
-          <LabelField>Nombre</LabelField>
+          <LabelField>Sexo</LabelField>
         </DataSetReference>
       </ValidValues>
       <MultiValue>true</MultiValue>
     </ReportParameter>
-    <ReportParameter Name="Ano_P">
+    <ReportParameter Name="Nacionalidad_P">
       <DataType>String</DataType>
       <DefaultValue>
         <DataSetReference>
-          <DataSetName>Año</DataSetName>
-          <ValueField>Año</ValueField>
+          <DataSetName>Nacionalidad</DataSetName>
+          <ValueField>Nacionalidad</ValueField>
         </DataSetReference>
       </DefaultValue>
-      <Prompt>Año:</Prompt>
+      <Prompt>Nacionalidad:</Prompt>
       <ValidValues>
         <DataSetReference>
-          <DataSetName>Año</DataSetName>
-          <ValueField>Año</ValueField>
-          <LabelField>Año</LabelField>
+          <DataSetName>Nacionalidad</DataSetName>
+          <ValueField>Nacionalidad</ValueField>
+          <LabelField>Nacionalidad</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="Areas_P">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>Areas</DataSetName>
+          <ValueField>Id</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Areas:</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>Areas</DataSetName>
+          <ValueField>Id</ValueField>
+          <LabelField>Áreas</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+      <UsedInQuery>False</UsedInQuery>
+    </ReportParameter>
+    <ReportParameter Name="Zonas2000_P">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>Zonas2000</DataSetName>
+          <ValueField>Zonas_2000</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Zonas 2000:</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>Zonas2000</DataSetName>
+          <ValueField>Zonas_2000</ValueField>
+          <LabelField>Zonas_2000</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="ZonasLing_P">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>ZonasLing</DataSetName>
+          <ValueField>Id</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Zonas lingüísticas:</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>ZonasLing</DataSetName>
+          <ValueField>Id</ValueField>
+          <LabelField>Zonas_lingüísticas</LabelField>
         </DataSetReference>
       </ValidValues>
       <MultiValue>true</MultiValue>
@@ -1895,7 +2750,7 @@ where (
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>0</RowIndex>
+          <RowIndex>1</RowIndex>
           <ParameterName>Areas_P</ParameterName>
         </CellDefinition>
         <CellDefinition>
@@ -1909,9 +2764,24 @@ where (
           <ParameterName>Sexo_P</ParameterName>
         </CellDefinition>
         <CellDefinition>
-          <ColumnIndex>3</ColumnIndex>
+          <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>Ano_P</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>Nacionalidad_P</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>Zonas2000_P</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>ZonasLing_P</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
