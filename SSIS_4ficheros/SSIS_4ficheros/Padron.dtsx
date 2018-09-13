@@ -1,0 +1,2649 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/18/2017 3:51:41 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WORKSTATION"
+  DTS:CreatorName="BOSONITDEV\andres.moncada"
+  DTS:DTSID="{5B3A530C-8D74-439F-A8F4-71B5B748406A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3006.16"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Padron"
+  DTS:PackageType="5"
+  DTS:VersionBuild="86"
+  DTS:VersionGUID="{2F33A805-4FDD-456E-9F91-29674BA678FC}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ConnectionFichero]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{1849F94F-D8BB-471A-A69D-F33A1112AA28}"
+      DTS:ObjectName="ConnectionFichero">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::RutaFichero]+ @[$Project::FicheroDatos]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\elena.garcia\Desktop\FicherosNavarra\padron2002_2017.dat">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ANO"
+              DTS:DTSID="{216A4E6E-1AAE-4D22-BB5A-900EF0D4D33B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CMUN"
+              DTS:DTSID="{D2743131-7C4F-43D6-BD63-4EB8BF3B44E3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DIST"
+              DTS:DTSID="{01D2108A-980E-40DB-B8D5-D2260D598CB8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SECC"
+              DTS:DTSID="{DEE93276-4DF7-48BB-A695-7C6391977E20}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CENTCO"
+              DTS:DTSID="{3D023D75-D12D-4364-AB57-67C739663F0C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CENTSI"
+              DTS:DTSID="{06ECEFB5-81F2-4234-996F-9ECAB393C437}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CNUCLE"
+              DTS:DTSID="{2E77EABD-4E59-4E2F-BE8A-F2214FA46568}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SEXO"
+              DTS:DTSID="{E6172663-E585-462D-9B93-D8367C14939B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ANNO"
+              DTS:DTSID="{02351947-DCED-44D5-89A9-2604CBC5FBB1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EDAD"
+              DTS:DTSID="{AED09316-4949-49BD-B7A3-3094F8A5AE02}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PRONACIM"
+              DTS:DTSID="{045139F4-67B0-4A93-B4D1-793DCDAE5C29}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NACIMNavarra"
+              DTS:DTSID="{02DDE737-BDFE-4C8A-B50C-CB923E17732C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NACIMotraCCAA"
+              DTS:DTSID="{1421747D-A4D8-4737-A730-0912E3B17F75}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PAISNACIM"
+              DTS:DTSID="{20326F89-E8B4-418A-B92D-9BBC38FD4646}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NACIM"
+              DTS:DTSID="{71000AAB-9B5C-4001-B866-7895F66FB850}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PAISNACIO"
+              DTS:DTSID="{07401875-64AE-435A-ADDB-BCC65DEEC7B8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CONTIN_NACIO"
+              DTS:DTSID="{FCD5C8C0-B92C-485D-A043-60EC5FDAE96B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="contin2_NACIO"
+              DTS:DTSID="{7858C3AC-147E-4CD8-9C63-7A9D218805BE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NACIO"
+              DTS:DTSID="{0E619856-60DE-4010-BE58-249F34333CA0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CNES"
+              DTS:DTSID="{D8B69C66-3452-4B45-BB10-F1C9525CCDD5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TAMU"
+              DTS:DTSID="{EE6CB63C-A94C-4883-B199-9C0ED3E845DE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Categoria"
+              DTS:DTSID="{E6DEA8DB-CC71-43C5-AB43-ECB50F350FE9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ZLING"
+              DTS:DTSID="{9392967F-9A13-4436-907D-3EC4AEFD7F82}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Z2000"
+              DTS:DTSID="{836C3469-08AB-4B86-8D97-B0B30D3CA1D7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CODZBS"
+              DTS:DTSID="{32AC1CF0-D124-4F83-8995-A792CE97D370}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CAM"
+              DTS:DTSID="{69D8C005-675B-444D-AA87-C0A4D5FCEC5A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AS"
+              DTS:DTSID="{8B559CF3-0F7F-4D5C-BAA2-1BD39BE2FCE0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SSM"
+              DTS:DTSID="{D782B36F-B715-4B1F-B86E-8618FFA7D932}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ASS"
+              DTS:DTSID="{EEF44005-8C16-43B9-8948-953EA409D319}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ZSS"
+              DTS:DTSID="{F950CC70-B894-4C41-92EB-ABE56EE2EFE5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="POT"
+              DTS:DTSID="{5F9E5141-9BB9-4FA6-834F-15D0FB4915B9}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{056AFE22-BF6B-4E05-9804-14292D93D10E}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\andres.moncada\Documents\Visual Studio 2015\Projects\SSIS_4ficheros\Dashboard Usuario final\tf.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CMUN"
+              DTS:DTSID="{9DEA43E1-197D-4F8D-8204-3F7FE235E2A2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SEXO"
+              DTS:DTSID="{DCDC2495-5EA1-4D71-A0BA-86B32FD46D03}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ANO"
+              DTS:DTSID="{CFD85BFB-0BB9-47EE-B0FE-84706B5DD4AE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EDAD"
+              DTS:DTSID="{B89E6C6A-6EEB-433B-AECB-9EC718407F28}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DIST"
+              DTS:DTSID="{62286997-D036-4637-94F0-BF54C5477595}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SECC"
+              DTS:DTSID="{B096F655-5410-4C0A-91DE-57CB713B772A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CNES"
+              DTS:DTSID="{E5B923FC-D38F-43D9-B095-F642860EB4D6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PAISNACIM"
+              DTS:DTSID="{906EC991-FB6A-43CC-B932-FCCDD05FCDF3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CENTCO"
+              DTS:DTSID="{7A974FBF-A5AC-406C-AAC2-6BA2FC65F739}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CENTSI"
+              DTS:DTSID="{C7757B43-BA2E-49E2-9050-3E124481DC58}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CNUCLE"
+              DTS:DTSID="{5C97DAC5-B8A9-42F5-83F6-AAFBE7EB2C49}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ANNO"
+              DTS:DTSID="{6D57046C-31E3-4D13-B1B7-C7B9BE28E64A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PRONACIM"
+              DTS:DTSID="{38A77229-75DE-475F-8733-1FAE3063BCEA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NACIMNavarra"
+              DTS:DTSID="{8E43EF39-253D-40FE-A028-255FA53E157C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NACIMotraCCAA"
+              DTS:DTSID="{DF325DF0-C357-4BDC-A5F9-AD7BD17DBC90}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NACIM"
+              DTS:DTSID="{4646081D-331E-4689-8B9A-D11371B67B14}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PAISNACIO"
+              DTS:DTSID="{B420CBE1-8DB4-44A2-8CA0-A156DCE119FC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CONTIN_NACIO"
+              DTS:DTSID="{5595503E-2CAB-43AA-8270-3F6A5531AA67}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="contin2_NACIO"
+              DTS:DTSID="{5E7AAA8D-C8F5-44C2-B05D-8FC4A465AC1A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NACIO"
+              DTS:DTSID="{9724052C-BEEC-47EF-9B70-7392813970FD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TAMU"
+              DTS:DTSID="{3BA5E57D-E740-4185-A9A3-94A00473083B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Categoria"
+              DTS:DTSID="{053B54CC-2304-49DD-BE76-D801329B0692}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ZLING"
+              DTS:DTSID="{ED1EF149-5B5A-4CC0-92D6-761247E25162}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Z2000"
+              DTS:DTSID="{627DDF37-B7BB-4A9D-93B5-B119F584A087}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CODZBS"
+              DTS:DTSID="{34B3619D-FF13-45EE-BE8E-702769C47D8D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CAM"
+              DTS:DTSID="{89F2DAB0-82E7-4C3B-944E-AF198556304A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AS"
+              DTS:DTSID="{B85C53EA-529A-4A48-A89B-56B2B0487775}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SSM"
+              DTS:DTSID="{8AAC972B-DCAC-456E-B0CA-8774F8181418}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ASS"
+              DTS:DTSID="{D927E3D1-B514-483D-9164-1B11FFCFF3F9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ZSS"
+              DTS:DTSID="{50DF4DA5-3C58-4E9E-9EDC-8081CCBDFC01}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="POT"
+              DTS:DTSID="{42A52E82-23CE-4B0B-8897-88B06EC3E671}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FECHA"
+              DTS:DTSID="{F273F050-4219-4DBA-BBA7-6DAA12A1BD80}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{355A1E48-8981-46F0-890E-3F8E76784F59}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{689D8DE0-DEF1-4B15-AE41-52B3CD5328D7}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{928B968A-7CF6-429F-9094-2B2AC23626B3}"
+      DTS:ObjectName="NombrePaquete">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">Padron</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F165AD5F-CCE9-4B6B-970C-42D30F5B4EBB}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="EjecucionId">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C666AD1D-5000-4FE4-AAA1-4A59C449F90A}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RowsLog">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Actualizar LOG"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DelayValidation="True"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{F4AEE4D9-DE84-449C-B327-382204BEB8EA}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Actualizar LOG"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C5277AC8-1C9E-4861-A695-66AEBF999E67}"
+          SQLTask:SqlStatementSource="Update [dbo].[Log_Ejecuciones]&#xA;set RowsInLog=?&#xA;where EjecucionId=?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::RowsLog"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::EjecucionId"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Fichero de datos"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{E8F660B8-4B42-4323-90F8-C8D3FF5C43C2}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fichero de datos"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Fichero de datos\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true"
+              validateExternalMetadata="False">
+              <inputs>
+                <input
+                  refId="Package\Fichero de datos\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fichero de datos\Derived Column.Inputs[Derived Column Input].Columns[ANO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ANO"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[ANO]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fichero de datos\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Fichero de datos\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fichero de datos\Derived Column.Outputs[Derived Column Output].Columns[FECHA]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Fichero de datos\Derived Column.Outputs[Derived Column Output].Columns[FECHA]"
+                      name="FECHA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBDATE)((DT_STR,4,1252)#{Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[ANO]} + "-01-01")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBDATE)((DT_STR,4,1252)ANO + "-01-01")</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Fichero de datos\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Fichero de datos\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fichero de datos\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fichero de datos\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fichero de datos\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fichero de datos\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Fichero de datos\FACT_Padron"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="FACT_Padron"
+              usesDispositions="true"
+              validateExternalMetadata="False"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[PN_FACT_Padron]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fichero de datos\FACT_Padron.Connections[OleDbConnection]"
+                  connectionManagerID="{C5277AC8-1C9E-4861-A695-66AEBF999E67}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[sqlserver.Padron_Navarra]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="RedirectRow"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].Columns[EDAD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EDAD"
+                      externalMetadataColumnId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[Edad]"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[EDAD]" />
+                    <inputColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].Columns[FECHA]"
+                      cachedDataType="dbDate"
+                      cachedName="FECHA"
+                      externalMetadataColumnId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[Fecha]"
+                      lineageId="Package\Fichero de datos\Derived Column.Outputs[Derived Column Output].Columns[FECHA]" />
+                    <inputColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].Columns[CMUN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CMUN"
+                      externalMetadataColumnId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdMunicipio]"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[CMUN]" />
+                    <inputColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].Columns[SEXO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SEXO"
+                      externalMetadataColumnId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdSexo]"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[SEXO]" />
+                    <inputColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].Columns[ANO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ANO"
+                      externalMetadataColumnId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[Año]"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[ANO]" />
+                    <inputColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].Columns[CNES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CNES"
+                      externalMetadataColumnId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdNivelEstudios]"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[CNES]" />
+                    <inputColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].Columns[PAISNACIO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PAISNACIO"
+                      externalMetadataColumnId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdPais]"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[PAISNACIO]" />
+                    <inputColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].Columns[PRONACIM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PRONACIM"
+                      externalMetadataColumnId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdProvincia]"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[PRONACIM]" />
+                    <inputColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].Columns[CONTIN_NACIO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CONTIN_NACIO"
+                      externalMetadataColumnId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdContinentes]"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[CONTIN_NACIO]" />
+                    <inputColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].Columns[contin2_NACIO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="contin2_NACIO"
+                      externalMetadataColumnId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdContinentes2]"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[contin2_NACIO]" />
+                    <inputColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].Columns[TAMU]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TAMU"
+                      externalMetadataColumnId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdTamanoMunicipio]"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[TAMU]" />
+                    <inputColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].Columns[Categoria]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Categoria"
+                      externalMetadataColumnId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdCategoria]"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[Categoria]" />
+                    <inputColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].Columns[ZLING]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ZLING"
+                      externalMetadataColumnId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdZonasLing]"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[ZLING]" />
+                    <inputColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].Columns[Z2000]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Z2000"
+                      externalMetadataColumnId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdZonas2000]"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[Z2000]" />
+                    <inputColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].Columns[CAM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CAM"
+                      externalMetadataColumnId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdCentrosAtencionMujer]"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[CAM]" />
+                    <inputColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].Columns[AS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AS"
+                      externalMetadataColumnId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdAreasSalud]"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[AS]" />
+                    <inputColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].Columns[SSM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SSM"
+                      externalMetadataColumnId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdServiciosSaludMental]"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[SSM]" />
+                    <inputColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].Columns[ASS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ASS"
+                      externalMetadataColumnId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdAreas]"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[ASS]" />
+                    <inputColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].Columns[CODZBS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CODZBS"
+                      externalMetadataColumnId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdZonasBasicasSalud]"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[CODZBS]" />
+                    <inputColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].Columns[ZSS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ZSS"
+                      externalMetadataColumnId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IsZonasSS]"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[ZSS]" />
+                    <inputColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].Columns[POT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="POT"
+                      externalMetadataColumnId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IDZonasPOT]"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[POT]" />
+                    <inputColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].Columns[NACIO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NACIO"
+                      externalMetadataColumnId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdNacionalidad]"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[NACIO]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdMunicipio]"
+                      dataType="i4"
+                      name="IdMunicipio" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdSexo]"
+                      dataType="i4"
+                      name="IdSexo" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[Año]"
+                      dataType="i4"
+                      name="Año" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[Edad]"
+                      dataType="i4"
+                      name="Edad" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdNivelEstudios]"
+                      dataType="i4"
+                      name="IdNivelEstudios" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdPais]"
+                      dataType="i4"
+                      name="IdPais" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[Fecha]"
+                      dataType="dbTimeStamp"
+                      name="Fecha" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdProvincia]"
+                      dataType="i4"
+                      name="IdProvincia" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdNacionalidad]"
+                      dataType="i4"
+                      name="IdNacionalidad" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdContinentes]"
+                      dataType="i4"
+                      name="IdContinentes" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdContinentes2]"
+                      dataType="i4"
+                      name="IdContinentes2" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdTamanoMunicipio]"
+                      dataType="i4"
+                      name="IdTamanoMunicipio" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdCategoria]"
+                      dataType="i4"
+                      name="IdCategoria" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdZonasLing]"
+                      dataType="i4"
+                      name="IdZonasLing" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdZonas2000]"
+                      dataType="i4"
+                      name="IdZonas2000" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdZonasBasicasSalud]"
+                      dataType="i4"
+                      name="IdZonasBasicasSalud" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdCentrosAtencionMujer]"
+                      dataType="i4"
+                      name="IdCentrosAtencionMujer" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdAreasSalud]"
+                      dataType="i4"
+                      name="IdAreasSalud" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdServiciosSaludMental]"
+                      dataType="i4"
+                      name="IdServiciosSaludMental" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdAreas]"
+                      dataType="i4"
+                      name="IdAreas" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IsZonasSS]"
+                      dataType="i4"
+                      name="IsZonasSS" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IDZonasPOT]"
+                      dataType="i4"
+                      name="IDZonasPOT" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fichero de datos\FACT_Padron.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fichero de datos\FACT_Padron.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fichero de datos\FACT_Padron.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fichero de datos\FACT_Padron.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Fichero de datos\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              validateExternalMetadata="False"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fichero de datos\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[ConnectionFichero]"
+                  connectionManagerRefId="Package.ConnectionManagers[ConnectionFichero]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[CMUN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CMUN]"
+                      length="50"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[CMUN]"
+                      name="CMUN"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[SEXO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SEXO]"
+                      length="50"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[SEXO]"
+                      name="SEXO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[ANO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ANO]"
+                      length="50"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[ANO]"
+                      name="ANO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[EDAD]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EDAD]"
+                      length="50"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[EDAD]"
+                      name="EDAD"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[DIST]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DIST]"
+                      length="50"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[DIST]"
+                      name="DIST"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[SECC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SECC]"
+                      length="50"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[SECC]"
+                      name="SECC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[CNES]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CNES]"
+                      length="50"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[CNES]"
+                      name="CNES"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[PAISNACIM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PAISNACIM]"
+                      length="50"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[PAISNACIM]"
+                      name="PAISNACIM"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[CENTCO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CENTCO]"
+                      length="50"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[CENTCO]"
+                      name="CENTCO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[CENTSI]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CENTSI]"
+                      length="50"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[CENTSI]"
+                      name="CENTSI"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[CNUCLE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CNUCLE]"
+                      length="50"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[CNUCLE]"
+                      name="CNUCLE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[ANNO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ANNO]"
+                      length="50"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[ANNO]"
+                      name="ANNO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[PRONACIM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PRONACIM]"
+                      length="50"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[PRONACIM]"
+                      name="PRONACIM"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[NACIMNavarra]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NACIMNavarra]"
+                      length="50"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[NACIMNavarra]"
+                      name="NACIMNavarra"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[NACIMotraCCAA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NACIMotraCCAA]"
+                      length="50"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[NACIMotraCCAA]"
+                      name="NACIMotraCCAA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[NACIM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NACIM]"
+                      length="50"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[NACIM]"
+                      name="NACIM"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[PAISNACIO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PAISNACIO]"
+                      length="50"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[PAISNACIO]"
+                      name="PAISNACIO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[CONTIN_NACIO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CONTIN_NACIO]"
+                      length="50"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[CONTIN_NACIO]"
+                      name="CONTIN_NACIO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[contin2_NACIO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[contin2_NACIO]"
+                      length="50"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[contin2_NACIO]"
+                      name="contin2_NACIO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[NACIO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NACIO]"
+                      length="50"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[NACIO]"
+                      name="NACIO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[TAMU]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TAMU]"
+                      length="50"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[TAMU]"
+                      name="TAMU"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[Categoria]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Categoria]"
+                      length="50"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[Categoria]"
+                      name="Categoria"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[ZLING]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ZLING]"
+                      length="50"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[ZLING]"
+                      name="ZLING"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[Z2000]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Z2000]"
+                      length="50"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[Z2000]"
+                      name="Z2000"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[CODZBS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CODZBS]"
+                      length="50"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[CODZBS]"
+                      name="CODZBS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[CAM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CAM]"
+                      length="50"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[CAM]"
+                      name="CAM"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[AS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AS]"
+                      length="50"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[AS]"
+                      name="AS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[SSM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SSM]"
+                      length="50"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[SSM]"
+                      name="SSM"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[ASS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ASS]"
+                      length="50"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[ASS]"
+                      name="ASS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[ZSS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ZSS]"
+                      length="50"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[ZSS]"
+                      name="ZSS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[POT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[POT]"
+                      length="50"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[POT]"
+                      name="POT"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CMUN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CMUN" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SEXO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SEXO" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ANO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ANO" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EDAD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EDAD" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DIST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DIST" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SECC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SECC" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CNES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CNES" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PAISNACIM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PAISNACIM" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CENTCO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CENTCO" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CENTSI]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CENTSI" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CNUCLE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CNUCLE" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ANNO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ANNO" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PRONACIM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PRONACIM" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NACIMNavarra]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NACIMNavarra" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NACIMotraCCAA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NACIMotraCCAA" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NACIM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NACIM" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PAISNACIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PAISNACIO" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CONTIN_NACIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CONTIN_NACIO" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[contin2_NACIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="contin2_NACIO" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NACIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NACIO" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TAMU]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TAMU" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Categoria]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Categoria" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ZLING]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ZLING" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Z2000]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Z2000" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CODZBS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CODZBS" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CAM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CAM" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AS" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SSM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SSM" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ASS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ASS" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ZSS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ZSS" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[POT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="POT" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Fichero de datos\LOG_Padron"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="LOG_Padron"
+              usesDispositions="true"
+              validateExternalMetadata="False"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[PN_LOG_Padron]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fichero de datos\LOG_Padron.Connections[OleDbConnection]"
+                  connectionManagerID="{C5277AC8-1C9E-4861-A695-66AEBF999E67}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[sqlserver.Padron_Navarra]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="RedirectRow"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input].Columns[EDAD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EDAD"
+                      externalMetadataColumnId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input].ExternalColumns[Edad]"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[EDAD]" />
+                    <inputColumn
+                      refId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input].Columns[FECHA]"
+                      cachedDataType="dbDate"
+                      cachedName="FECHA"
+                      externalMetadataColumnId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input].ExternalColumns[Fecha]"
+                      lineageId="Package\Fichero de datos\Derived Column.Outputs[Derived Column Output].Columns[FECHA]" />
+                    <inputColumn
+                      refId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input].Columns[CMUN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CMUN"
+                      externalMetadataColumnId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdMunicipio]"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[CMUN]" />
+                    <inputColumn
+                      refId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input].Columns[SEXO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SEXO"
+                      externalMetadataColumnId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdSexo]"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[SEXO]" />
+                    <inputColumn
+                      refId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input].Columns[ANO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ANO"
+                      externalMetadataColumnId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input].ExternalColumns[Año]"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[ANO]" />
+                    <inputColumn
+                      refId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input].Columns[DIST]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DIST"
+                      externalMetadataColumnId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdDistrito]"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[DIST]" />
+                    <inputColumn
+                      refId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input].Columns[SECC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SECC"
+                      externalMetadataColumnId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdSeccion]"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[SECC]" />
+                    <inputColumn
+                      refId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input].Columns[CNES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CNES"
+                      externalMetadataColumnId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdNivelEstudios]"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[CNES]" />
+                    <inputColumn
+                      refId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input].Columns[PAISNACIO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PAISNACIO"
+                      externalMetadataColumnId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdPais]"
+                      lineageId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output].Columns[PAISNACIO]" />
+                    <inputColumn
+                      refId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input].ExternalColumns[error]"
+                      lineageId="Package\Fichero de datos\FACT_Padron.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdMunicipio]"
+                      dataType="i4"
+                      name="IdMunicipio" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdSexo]"
+                      dataType="i4"
+                      name="IdSexo" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input].ExternalColumns[Año]"
+                      dataType="i4"
+                      name="Año" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input].ExternalColumns[Edad]"
+                      dataType="i4"
+                      name="Edad" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdDistrito]"
+                      dataType="i4"
+                      name="IdDistrito" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdSeccion]"
+                      dataType="i4"
+                      name="IdSeccion" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdNivelEstudios]"
+                      dataType="i4"
+                      name="IdNivelEstudios" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input].ExternalColumns[IdPais]"
+                      dataType="i4"
+                      name="IdPais" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input].ExternalColumns[Fecha]"
+                      dataType="dbTimeStamp"
+                      name="Fecha" />
+                    <externalMetadataColumn
+                      refId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input].ExternalColumns[error]"
+                      dataType="wstr"
+                      length="100"
+                      name="error" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fichero de datos\LOG_Padron.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fichero de datos\LOG_Padron.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fichero de datos\LOG_Padron.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fichero de datos\LOG_Padron.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fichero de datos\LOG_Padron.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Fichero de datos\Row Count"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Row Count"
+              validateExternalMetadata="False">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::RowsLog</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Fichero de datos\Row Count.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fichero de datos\Row Count.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Fichero de datos\Row Count.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Fichero de datos.Paths[Derived Column Output]"
+              endId="Package\Fichero de datos\FACT_Padron.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Fichero de datos\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Fichero de datos.Paths[Flat File Source Output]"
+              endId="Package\Fichero de datos\Derived Column.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Fichero de datos\Flat File Source.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Fichero de datos.Paths[OLE DB Destination Error Output]"
+              endId="Package\Fichero de datos\Row Count.Inputs[Row Count Input 1]"
+              name="OLE DB Destination Error Output"
+              startId="Package\Fichero de datos\FACT_Padron.Outputs[OLE DB Destination Error Output]" />
+            <path
+              refId="Package\Fichero de datos.Paths[Row Count Output 1]"
+              endId="Package\Fichero de datos\LOG_Padron.Inputs[OLE DB Destination Input]"
+              name="Row Count Output 1"
+              startId="Package\Fichero de datos\Row Count.Outputs[Row Count Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DelayValidation="True"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{2a19b5fc-e273-407a-9ac6-8e1c704bfca1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 CTP2.1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C5277AC8-1C9E-4861-A695-66AEBF999E67}"
+          SQLTask:SqlStatementSource="truncate table PN_FACT_Padron" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{FB9F0FB4-20DD-4E90-A19E-428854B0CEA6}"
+      DTS:From="Package\Truncate Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Fichero de datos" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{DFC1247E-3442-4674-AB15-A93ADDDFA388}"
+      DTS:From="Package\Fichero de datos"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Actualizar LOG"
+      DTS:Value="1" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="148,42"
+          Id="Package\Actualizar LOG"
+          TopLeft="128,259" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Fichero de datos"
+          TopLeft="128,139" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Truncate Table"
+          TopLeft="129,53" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="205.25,95">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44"
+              Start="0,0"
+              End="0,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="204.25,181">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,78"
+              Start="0,0"
+              End="0,70.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,70.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-15.24134765625,30.37548828125,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Fichero de datos">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Fichero de datos\Derived Column"
+          TopLeft="18,102" />
+        <NodeLayout
+          Size="142,42"
+          Id="Package\Fichero de datos\FACT_Padron"
+          TopLeft="22,192" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Fichero de datos\Flat File Source"
+          TopLeft="19,14" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Fichero de datos\Row Count"
+          TopLeft="282,266" />
+        <NodeLayout
+          Size="138,42"
+          Id="Package\Fichero de datos\LOG_Padron"
+          TopLeft="281,359" />
+        <EdgeLayout
+          Id="Package\Fichero de datos.Paths[Row Count Output 1]"
+          TopLeft="348.5,308">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51"
+              Start="0,0"
+              End="0,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fichero de datos.Paths[OLE DB Destination Error Output]"
+          TopLeft="93,234">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="254,32"
+              Start="0,0"
+              End="254,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12"
+                    Point2="0,16"
+                    Point3="4,16" />
+                  <mssgle:LineSegment
+                    End="250,16" />
+                  <mssgle:CubicBezierSegment
+                    Point1="250,16"
+                    Point2="254,16"
+                    Point3="254,20" />
+                  <mssgle:LineSegment
+                    End="254,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="53.79109375,21,146.4178125,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fichero de datos.Paths[Flat File Source Output]"
+          TopLeft="94.75,56">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fichero de datos.Paths[Derived Column Output]"
+          TopLeft="94,144">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fichero de datos\FACT_Padron">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fichero de datos\LOG_Padron">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,25 @@
+﻿CREATE TABLE [dbo].[PN_FACT_Padron] (
+	[Año]             INT      NULL,
+    [IdMunicipio]     INT      NULL,
+    [IdSexo]          INT      NULL,
+    [Edad]            INT      NULL,
+	[IdProvincia]	  INT      NULL,
+    [IdNacionalidad]  INT      NULL,
+    [IdPais]          INT      NULL,
+	[IdContinentes]   INT      NULL,
+	[IdContinentes2]  INT      NULL,
+    [IdNivelEstudios] INT      NULL,
+    [IdTamanoMunicipio] INT      NULL,
+	[IdCategoria]	  INT      NULL,
+	[IdZonasLing]	  INT      NULL,
+	[IdZonas2000]	  INT      NULL,
+	[IdZonasBasicasSalud]		INT      NULL,
+	[IdCentrosAtencionMujer]	INT      NULL,
+	[IdAreasSalud]	  INT      NULL,
+	[IdServiciosSaludMental]	INT      NULL,
+	[IdAreas]		  INT      NULL,
+	[IsZonasSS]		  INT      NULL,
+	[IDZonasPOT]	  INT      NULL,
+    [Fecha]           DATETIME NULL
+);
+
