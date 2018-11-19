@@ -5,7 +5,7 @@ Universidad Internacional de La Rioja
 
 En este proyecto se encuentra el código fuente del trabajo fin de máster titulado "Desarrollo de una solución BI a medida".
 
-El proyecto consiste en la realizacion de una solucion completa de BI para el Instituto de estadística del gobierno de Navarra. Esta solución consta de un proceso de integración de datos, diseño y creación de un modelo de datos y el desarrollo de 5 informes utilizando la herramienta Power BI.
+El proyecto consiste en la realización de una solución completa de BI para el Instituto de Estadística del Gobierno de Navarra. Esta solución consta de un proceso de integración de datos, diseño y creación de un modelo de datos y el desarrollo de 5 informes utilizando la herramienta Power BI.
 
 Para ello se han creado los correspondientes subproyectos:
 
